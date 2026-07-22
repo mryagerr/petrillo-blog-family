@@ -12,6 +12,9 @@ const blog = defineCollection({
 		// Transform string to Date object
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
+		// When the event actually happens. Used to sort posts into
+		// "Upcoming" and "Past" on the blog page. Falls back to pubDate.
+		eventDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 	}),
 });
