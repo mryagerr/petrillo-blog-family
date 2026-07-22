@@ -101,6 +101,44 @@ input {
 table {
 	width: 100%;
 }
+/* Itinerary tables in event write-ups */
+.prose h3 {
+	margin: 2rem 0 0.75rem;
+	padding-left: 0.75rem;
+	border-left: 5px solid var(--accent);
+	font-size: 1.5rem;
+}
+.prose table {
+	border-collapse: collapse;
+	margin: 0 0 1.5em;
+	font-size: 0.95rem;
+	line-height: 1.4;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 0 0 1px rgb(var(--gray-light));
+}
+.prose thead th {
+	background: var(--accent);
+	color: rgb(var(--cream));
+	text-align: left;
+	font-size: 0.75rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	padding: 0.55em 0.9em;
+}
+.prose tbody td {
+	padding: 0.6em 0.9em;
+	border-top: 1px solid rgb(var(--gray-light));
+	vertical-align: top;
+}
+.prose tbody tr:nth-child(even) {
+	background: rgba(var(--gray-light), 40%);
+}
+.prose tbody td:first-child {
+	font-weight: 700;
+	white-space: nowrap;
+	color: rgb(var(--gray-dark));
+}
 img {
 	max-width: 100%;
 	height: auto;
