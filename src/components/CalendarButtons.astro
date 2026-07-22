@@ -1,0 +1,60 @@
+---
+import type { Event } from "../lib/events";
+import { googleCalendarUrl } from "../lib/calendar";
+
+interface Props {
+	event: Event;
+}
+const { event } = Astro.props;
+
+const gcal = googleCalendarUrl(event);
+// TBD events have no date, so there is nothing to add to a calendar yet.
+const hasDate = gcal !== null;
+---
+
+{
+	hasDate && (
+		<div class="cal">
+			<span class="cal-label">Add to calendar:</span>
+			<a class="cal-btn" href={`/events/${event.id}.ics`} download>
+				<span aria-hidden="true">📅</span> Apple / Outlook (.ics)
+			</a>
+			<a class="cal-btn" href={gcal} target="_blank" rel="noopener">
+				<span aria-hidden="true">📆</span> Google Calendar
+			</a>
+		</div>
+	)
+}
+
+<style>
+	.cal {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5em;
+		margin-top: 0.4em;
+	}
+	.cal-label {
+		font-size: 0.95rem;
+		color: var(--ink-soft);
+		font-weight: 700;
+	}
+	.cal-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35em;
+		padding: 0.4em 0.8em;
+		border: 1px solid var(--hairline-strong);
+		border-radius: 999px;
+		background: var(--surface);
+		color: var(--ink);
+		font-size: 0.95rem;
+		font-weight: 700;
+		text-decoration: none;
+		transition: background 0.15s ease, border-color 0.15s ease;
+	}
+	.cal-btn:hover {
+		background: var(--accent-wash);
+		border-color: var(--accent);
+	}
+</style>

@@ -1,0 +1,259 @@
+---
+import type { Event } from "../lib/events";
+import { TYPE_META, formatWhen } from "../lib/events";
+import { IS_GATED, CONTACT_URL } from "../consts";
+import CalendarButtons from "./CalendarButtons.astro";
+
+interface Props {
+	event: Event;
+	past?: boolean;
+}
+const { event, past = false } = Astro.props;
+const meta = TYPE_META[event.type];
+
+// -------------------------- PII gating decisions --------------------------
+// Exact address is shown ONLY in gated mode. In public mode it is never
+// rendered at all (omitted from the HTML, not just hidden).
+const showExactAddress = IS_GATED && !!event.exactAddress;
+
+// Map link: always OK for a public venue. For a private home, only in gated mode.
+const showMapLink =
+	!!event.mapUrl && (!event.isPrivateHome || IS_GATED);
+
+// Photo galleries carry faces and places, so keep them behind the gate.
+// Exception: past-event galleries stay visible in public mode too, since the
+// recap is much of the point — flip `|| past` off if you'd rather gate those.
+const showGallery = event.photos.length > 0 && (IS_GATED || past);
+
+const rsvpHost = event.rsvp?.hostFirstName ?? "the host";
+---
+
+<article class="card" id={event.id}>
+	<div class="tag" style={`--tag-color:${meta.color}`}>
+		<span aria-hidden="true">{meta.icon}</span> {meta.label}
+	</div>
+
+	<h3 class="title">{event.title}</h3>
+
+	<p class="when">
+		<span aria-hidden="true">🗓️</span>
+		{formatWhen(event)}
+	</p>
+
+	<p class="where">
+		<span aria-hidden="true">📍</span>
+		{event.venue}{event.cityArea ? ` · ${event.cityArea}` : ""}
+		{
+			showMapLink && (
+				<>
+					{" "}
+					<a class="maplink" href={event.mapUrl!} target="_blank" rel="noopener">
+						directions
+					</a>
+				</>
+			)
+		}
+	</p>
+
+	{
+		showExactAddress && (
+			<p class="address">
+				<span aria-hidden="true">🏠</span> {event.exactAddress}
+			</p>
+		)
+	}
+
+	<p class="desc">{event.description}</p>
+
+	{
+		event.recap && (
+			<p class="recap">
+				<span class="recap-label">Recap:</span> {event.recap}
+			</p>
+		)
+	}
+
+	{
+		event.details.length > 0 && (
+			<dl class="details">
+				{event.details.map((d) => (
+					<div class="detail">
+						<dt>{d.label}</dt>
+						<dd>{d.value}</dd>
+					</div>
+				))}
+			</dl>
+		)
+	}
+
+	{
+		showGallery && (
+			<div class="gallery" role="group" aria-label={`Photos from ${event.title}`}>
+				{event.photos.map((p) => (
+					<figure class="shot">
+						<img src={p.src} alt={p.alt} loading="lazy" />
+						{p.caption && <figcaption>{p.caption}</figcaption>}
+					</figure>
+				))}
+			</div>
+		)
+	}
+
+	<div class="meta-row">
+		{event.host && <span class="host">{event.host}</span>}
+		{
+			typeof event.comingCount === "number" && (
+				<span class="count">👋 {event.comingCount} coming</span>
+			)
+		}
+	</div>
+
+	{!past && <CalendarButtons event={event} />}
+
+	{
+		!past && event.rsvp && (
+			<div class="rsvp">
+				<a class="rsvp-btn" href={CONTACT_URL} target="_blank" rel="noopener">
+					Let {rsvpHost} know you&rsquo;re coming
+				</a>
+			</div>
+		)
+	}
+</article>
+
+<style>
+	.card {
+		background: var(--surface);
+		border: 1px solid var(--hairline);
+		border-radius: 18px;
+		padding: 1.4em 1.5em;
+		box-shadow: var(--card-shadow);
+		scroll-margin-top: 1em;
+	}
+	.tag {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35em;
+		background: var(--tag-color);
+		color: var(--tag-ink);
+		font-weight: 700;
+		font-size: 0.9rem;
+		padding: 0.25em 0.7em;
+		border-radius: 999px;
+	}
+	.title {
+		font-family: var(--font-display);
+		font-size: 1.9rem;
+		margin: 0.4em 0 0.3em;
+	}
+	.when,
+	.where,
+	.address {
+		margin: 0.2em 0;
+		font-size: 1.05rem;
+		color: var(--ink);
+	}
+	.when {
+		font-weight: 700;
+	}
+	.address {
+		color: var(--accent-ink);
+		font-weight: 700;
+	}
+	.maplink {
+		color: var(--accent-ink);
+		font-weight: 700;
+	}
+	.desc {
+		margin: 0.7em 0;
+		font-size: 1.08rem;
+		line-height: 1.55;
+	}
+	.recap {
+		margin: 0.7em 0;
+		padding: 0.7em 0.9em;
+		background: var(--accent-wash);
+		border-radius: 12px;
+		font-size: 1.02rem;
+	}
+	.recap-label {
+		font-weight: 700;
+		color: var(--accent-ink);
+	}
+	.details {
+		display: grid;
+		gap: 0.5em;
+		margin: 0.9em 0;
+		padding: 0.9em 1em;
+		background: var(--sunken);
+		border-radius: 12px;
+	}
+	.detail {
+		display: grid;
+		grid-template-columns: 6.5em 1fr;
+		gap: 0.6em;
+	}
+	.detail dt {
+		font-weight: 700;
+		color: var(--ink-soft);
+	}
+	.detail dd {
+		margin: 0;
+	}
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+		gap: 0.6em;
+		margin: 1em 0;
+	}
+	.shot {
+		margin: 0;
+	}
+	.shot img {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		border-radius: 10px;
+		display: block;
+	}
+	.shot figcaption {
+		font-size: 0.85rem;
+		color: var(--ink-soft);
+		margin-top: 0.2em;
+	}
+	.meta-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5em 1em;
+		align-items: center;
+		margin: 0.8em 0 0.3em;
+		font-size: 0.98rem;
+		color: var(--ink-soft);
+	}
+	.count {
+		font-weight: 700;
+		color: var(--ink);
+	}
+	.rsvp {
+		margin-top: 1em;
+	}
+	.rsvp-btn {
+		display: inline-block;
+		background: var(--accent);
+		color: #fff;
+		padding: 0.6em 1.3em;
+		border-radius: 999px;
+		font-weight: 700;
+		text-decoration: none;
+		font-size: 1.05rem;
+	}
+	.rsvp-btn:hover {
+		background: var(--accent-strong);
+	}
+	@media (max-width: 480px) {
+		.detail {
+			grid-template-columns: 1fr;
+			gap: 0.1em;
+		}
+	}
+</style>

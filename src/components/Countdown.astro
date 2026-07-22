@@ -1,0 +1,120 @@
+---
+import type { Event } from "../lib/events";
+import { eventStart, formatWhen } from "../lib/events";
+
+interface Props {
+	event: Event;
+}
+const { event } = Astro.props;
+const start = eventStart(event);
+const iso = start ? start.toISOString() : "";
+---
+
+<section class="countdown" aria-live="polite">
+	<p class="lead">Next up</p>
+	<h2 class="ev-title">
+		<a href={`#${event.id}`}>{event.title}</a>
+	</h2>
+	<p class="when">{formatWhen(event)}</p>
+	<div class="clock" data-target={iso}>
+		<div class="unit"><span class="num" data-days>—</span><span class="lbl">days</span></div>
+		<div class="unit"><span class="num" data-hours>—</span><span class="lbl">hrs</span></div>
+		<div class="unit"><span class="num" data-mins>—</span><span class="lbl">min</span></div>
+		<div class="unit"><span class="num" data-secs>—</span><span class="lbl">sec</span></div>
+	</div>
+</section>
+
+<script>
+	function pad(n: number) {
+		return n < 10 ? "0" + n : "" + n;
+	}
+	const clock = document.querySelector<HTMLElement>(".clock[data-target]");
+	if (clock && clock.dataset.target) {
+		const target = new Date(clock.dataset.target).getTime();
+		const dEl = clock.querySelector("[data-days]")!;
+		const hEl = clock.querySelector("[data-hours]")!;
+		const mEl = clock.querySelector("[data-mins]")!;
+		const sEl = clock.querySelector("[data-secs]")!;
+		const tick = () => {
+			let diff = Math.max(0, target - Date.now());
+			const days = Math.floor(diff / 86400000);
+			diff -= days * 86400000;
+			const hours = Math.floor(diff / 3600000);
+			diff -= hours * 3600000;
+			const mins = Math.floor(diff / 60000);
+			diff -= mins * 60000;
+			const secs = Math.floor(diff / 1000);
+			dEl.textContent = String(days);
+			hEl.textContent = pad(hours);
+			mEl.textContent = pad(mins);
+			sEl.textContent = pad(secs);
+			if (target - Date.now() <= 0) {
+				clock.classList.add("is-now");
+			}
+		};
+		tick();
+		setInterval(tick, 1000);
+	}
+</script>
+
+<style>
+	.countdown {
+		background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+		color: #fff;
+		border-radius: 20px;
+		padding: 1.6em 1.5em;
+		text-align: center;
+		box-shadow: var(--card-shadow);
+	}
+	.lead {
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		font-size: 0.85rem;
+		opacity: 0.9;
+	}
+	.ev-title {
+		font-family: var(--font-display);
+		margin: 0.15em 0 0.1em;
+		font-size: 2rem;
+	}
+	.ev-title a {
+		color: #fff;
+		text-decoration: none;
+	}
+	.ev-title a:hover {
+		text-decoration: underline;
+	}
+	.when {
+		margin: 0 0 0.9em;
+		font-size: 1.05rem;
+		opacity: 0.95;
+	}
+	.clock {
+		display: flex;
+		justify-content: center;
+		gap: 0.6em;
+		flex-wrap: wrap;
+	}
+	.unit {
+		background: rgba(255, 255, 255, 0.16);
+		border-radius: 12px;
+		padding: 0.5em 0.7em;
+		min-width: 3.4em;
+	}
+	.num {
+		display: block;
+		font-size: 1.9rem;
+		font-weight: 700;
+		font-variant-numeric: tabular-nums;
+		line-height: 1;
+	}
+	.lbl {
+		display: block;
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		opacity: 0.9;
+		margin-top: 0.2em;
+	}
+</style>
