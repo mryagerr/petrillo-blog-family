@@ -2,6 +2,7 @@
 title: "Michael Petrillo's 40th Birthday"
 description: "Ten days of desert adventures for Michael's 40th — MGM, Zion, and Mandalay Bay."
 pubDate: "Jul 22 2026"
+eventDate: "Jun 15 2027"
 heroImage: "/blog-placeholder-1.jpg"
 ---
 
