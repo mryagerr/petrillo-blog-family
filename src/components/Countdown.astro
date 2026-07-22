@@ -1,0 +1,137 @@
+---
+import type { EventEntry } from "../lib/events";
+import { hasDate } from "../lib/events";
+
+interface Props {
+	event: EventEntry;
+}
+
+const { event } = Astro.props;
+const dated = hasDate(event);
+// Countdown targets the start date at 9am local (a friendly, non-midnight time).
+const target = dated ? new Date(event.data.eventDate!) : null;
+if (target) target.setHours(9, 0, 0, 0);
+const iso = target?.toISOString();
+const url = `/events/${event.id}/`;
+---
+
+{
+	dated && (
+		<section class="countdown" aria-label="Countdown to the next event">
+			<p class="cd-eyebrow">Next up</p>
+			<h2 class="cd-title"><a href={url}>{event.data.title}</a></h2>
+			<div class="cd-clock" data-target={iso} role="timer" aria-live="off">
+				<div class="cd-unit"><span class="cd-num" data-days>–</span><span class="cd-lbl">days</span></div>
+				<div class="cd-unit"><span class="cd-num" data-hours>–</span><span class="cd-lbl">hrs</span></div>
+				<div class="cd-unit"><span class="cd-num" data-mins>–</span><span class="cd-lbl">min</span></div>
+				<div class="cd-unit"><span class="cd-num" data-secs>–</span><span class="cd-lbl">sec</span></div>
+			</div>
+		</section>
+	)
+}
+
+<style>
+	.countdown {
+		text-align: center;
+		padding: 2.5rem 1.5rem;
+		margin-bottom: 3rem;
+		border-radius: 20px;
+		background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+		color: white;
+	}
+	.cd-eyebrow {
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		font-size: 0.85rem;
+		font-weight: 700;
+		opacity: 0.85;
+	}
+	.cd-title {
+		margin: 0.2rem 0 1.3rem;
+		font-size: 2rem;
+		line-height: 1.1;
+	}
+	.cd-title a {
+		color: white;
+		text-decoration: none;
+	}
+	.cd-title a:hover {
+		text-decoration: underline;
+	}
+	.cd-clock {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	.cd-unit {
+		display: flex;
+		flex-direction: column;
+		min-width: 4.2rem;
+		padding: 0.6rem 0.4rem;
+		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.15);
+	}
+	.cd-num {
+		font-size: 2.2rem;
+		font-weight: 700;
+		line-height: 1;
+		font-variant-numeric: tabular-nums;
+	}
+	.cd-lbl {
+		margin-top: 0.3rem;
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		opacity: 0.85;
+	}
+	@media (max-width: 720px) {
+		.cd-unit {
+			min-width: 3.6rem;
+		}
+		.cd-num {
+			font-size: 1.7rem;
+		}
+	}
+</style>
+
+<script>
+	function initCountdown() {
+		const clock = document.querySelector<HTMLElement>(".cd-clock[data-target]");
+		if (!clock) return;
+		const targetIso = clock.getAttribute("data-target");
+		if (!targetIso) return;
+		const target = new Date(targetIso).getTime();
+
+		const numEl = (attr: string) =>
+			clock.querySelector<HTMLElement>(`[data-${attr}]`);
+		const els = {
+			days: numEl("days"),
+			hours: numEl("hours"),
+			mins: numEl("mins"),
+			secs: numEl("secs"),
+		};
+
+		function tick() {
+			const diff = target - Date.now();
+			if (diff <= 0) {
+				clock.innerHTML = "<p class='cd-now'>🎉 It's here — see you there!</p>";
+				return;
+			}
+			const s = Math.floor(diff / 1000);
+			const days = Math.floor(s / 86400);
+			const hours = Math.floor((s % 86400) / 3600);
+			const mins = Math.floor((s % 3600) / 60);
+			const secs = s % 60;
+			if (els.days) els.days.textContent = String(days);
+			if (els.hours) els.hours.textContent = String(hours);
+			if (els.mins) els.mins.textContent = String(mins);
+			if (els.secs) els.secs.textContent = String(secs);
+			requestAnimationFrame(() => setTimeout(tick, 1000));
+		}
+		tick();
+	}
+	initCountdown();
+	document.addEventListener("astro:page-load", initCountdown);
+</script>

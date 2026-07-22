@@ -1,0 +1,32 @@
+---
+import { EVENT_TYPES, type EventType } from "../consts";
+
+interface Props {
+	type: EventType;
+}
+
+const { type } = Astro.props;
+const meta = EVENT_TYPES[type];
+---
+
+<span class="type-tag" style={`--tag-color: ${meta.color}`}>
+	<span aria-hidden="true">{meta.icon}</span>
+	{meta.label}
+</span>
+
+<style>
+	.type-tag {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35em;
+		padding: 0.2em 0.7em;
+		border-radius: 999px;
+		font-size: 0.8rem;
+		font-weight: 700;
+		line-height: 1.4;
+		color: var(--tag-color);
+		background: color-mix(in srgb, var(--tag-color) 14%, white);
+		border: 1px solid color-mix(in srgb, var(--tag-color) 35%, white);
+		white-space: nowrap;
+	}
+</style>

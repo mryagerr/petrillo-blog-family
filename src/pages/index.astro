@@ -1,8 +1,14 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Countdown from "../components/Countdown.astro";
+import EventCard from "../components/EventCard.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getSortedEvents } from "../lib/events";
+
+const { upcoming, past } = await getSortedEvents();
+const nextEvent = upcoming[0];
 ---
 
 <!doctype html>
@@ -13,17 +19,121 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>👋 Welcome to the Petrillo Family blog!</h1>
-			<p>
-				This is our little corner of the web where we share our adventures, milestones, and
-				memories. Big trips, birthdays, and everything in between.
+			<h1 class="page-title">Petrillo Family Events</h1>
+			<p class="intro">
+				Everything the family has coming up — plus memories from gatherings
+				past. Tap an event for the details, save it to your calendar, and let
+				the host know you're coming.
 			</p>
-			<p>
-				First up: we're celebrating <strong>Michael's 40th birthday</strong> with a ten-day road
-				trip through Las Vegas and Zion. Head over to the <a href="/blog">blog</a> to see the full
-				itinerary.
-			</p>
+
+			{nextEvent && <Countdown event={nextEvent} />}
+
+			<nav class="tabs" aria-label="Jump to a section">
+				<a href="#upcoming" class="tab">Upcoming</a>
+				<a href="#past" class="tab">Past</a>
+				<a href="/calendar.ics" class="tab tab-subscribe">
+					<span aria-hidden="true">🔔</span> Subscribe
+				</a>
+			</nav>
+
+			<section id="upcoming" class="events-section">
+				<h2 class="section-heading">Upcoming Events</h2>
+				{
+					upcoming.length > 0 ? (
+						<div class="cards">
+							{upcoming.map((event) => (
+								<EventCard event={event} variant="upcoming" />
+							))}
+						</div>
+					) : (
+						<p class="empty">No upcoming events yet — check back soon.</p>
+					)
+				}
+			</section>
+
+			<section id="past" class="events-section">
+				<h2 class="section-heading">Past Events</h2>
+				{
+					past.length > 0 ? (
+						<div class="cards">
+							{past.map((event) => (
+								<EventCard event={event} variant="past" />
+							))}
+						</div>
+					) : (
+						<p class="empty">No past events to show yet.</p>
+					)
+				}
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	main {
+		width: 1040px;
+	}
+	.page-title {
+		text-align: center;
+		margin-bottom: 0.3rem;
+	}
+	.intro {
+		max-width: 40rem;
+		margin: 0 auto 2.5rem;
+		text-align: center;
+		color: rgb(var(--gray-dark));
+	}
+	.tabs {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-bottom: 2.5rem;
+	}
+	.tab {
+		padding: 0.5em 1.2em;
+		border-radius: 999px;
+		border: 2px solid rgb(var(--gray-light));
+		background: white;
+		color: rgb(var(--gray-dark));
+		font-weight: 700;
+		text-decoration: none;
+		transition: 0.15s ease;
+	}
+	.tab:hover {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+	.tab-subscribe {
+		border-color: var(--accent);
+		color: var(--accent-dark);
+	}
+	.events-section {
+		margin-bottom: 3.5rem;
+		scroll-margin-top: 1rem;
+	}
+	.section-heading {
+		margin-bottom: 1.5rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid rgb(var(--gray-light));
+	}
+	.cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+		gap: 1.75rem;
+	}
+	.empty {
+		padding: 2.5rem 1.5rem;
+		text-align: center;
+		font-size: 1.15rem;
+		color: rgb(var(--gray));
+		background: rgba(var(--gray-light), 40%);
+		border-radius: 16px;
+	}
+	@media (max-width: 720px) {
+		.cards {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

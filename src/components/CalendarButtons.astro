@@ -1,0 +1,60 @@
+---
+import type { EventEntry } from "../lib/events";
+import { googleCalendarUrl, hasDate } from "../lib/events";
+
+interface Props {
+	event: EventEntry;
+}
+
+const { event } = Astro.props;
+// No date yet → nothing to add to a calendar.
+const showButtons = hasDate(event);
+const googleUrl = showButtons ? googleCalendarUrl(event) : "";
+const icsUrl = `/events/${event.id}.ics`;
+---
+
+{
+	showButtons && (
+		<div class="cal-buttons">
+			<span class="cal-label">Save the date:</span>
+			<a class="cal-btn" href={icsUrl} download>
+				<span aria-hidden="true">📅</span> Add to calendar (.ics)
+			</a>
+			<a class="cal-btn" href={googleUrl} target="_blank" rel="noopener">
+				<span aria-hidden="true">📆</span> Google Calendar
+			</a>
+		</div>
+	)
+}
+
+<style>
+	.cal-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0;
+	}
+	.cal-label {
+		font-weight: 700;
+		color: rgb(var(--gray-dark));
+	}
+	.cal-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35em;
+		padding: 0.45em 0.9em;
+		border-radius: 10px;
+		border: 2px solid var(--accent);
+		background: white;
+		color: var(--accent-dark);
+		font-weight: 700;
+		font-size: 0.95rem;
+		text-decoration: none;
+		transition: 0.15s ease;
+	}
+	.cal-btn:hover {
+		background: var(--accent);
+		color: white;
+	}
+</style>

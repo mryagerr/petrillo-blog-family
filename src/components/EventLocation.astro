@@ -1,0 +1,54 @@
+---
+import type { EventEntry } from "../lib/events";
+import { displayLocation, mayRevealAddress } from "../lib/events";
+import { PRIVACY_NOTE } from "../consts";
+
+interface Props {
+	event: EventEntry;
+}
+
+const { event } = Astro.props;
+const place = displayLocation(event);
+const reveal = mayRevealAddress(event);
+const { locationPrivate, mapUrl, fullAddress } = event.data;
+---
+
+{
+	place && (
+		<p class="where">
+			<span aria-hidden="true">📍</span>
+			<span>
+				{place}
+				{reveal && fullAddress && <br />}
+				{reveal && fullAddress && <span class="address">{fullAddress}</span>}
+				{reveal && mapUrl && (
+					<>
+						{" "}
+						<a href={mapUrl} target="_blank" rel="noopener">
+							Directions
+						</a>
+					</>
+				)}
+				{locationPrivate && !reveal && (
+					<span class="private-note"> — {PRIVACY_NOTE}</span>
+				)}
+			</span>
+		</p>
+	)
+}
+
+<style>
+	.where {
+		display: flex;
+		align-items: baseline;
+		gap: 0.5em;
+		margin: 0;
+	}
+	.address {
+		color: rgb(var(--gray-dark));
+	}
+	.private-note {
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+	}
+</style>
