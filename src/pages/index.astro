@@ -1,8 +1,18 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Gate from "../components/Gate.astro";
+import Countdown from "../components/Countdown.astro";
+import EventCard from "../components/EventCard.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { loadEvents, nextDatedEvent, TYPE_META } from "../lib/events";
+
+const { upcoming, past } = await loadEvents();
+const next = nextDatedEvent(upcoming);
+
+// Distinct event types present, for the filter chips.
+const typesPresent = [...new Set([...upcoming, ...past].map((e) => e.type))];
 ---
 
 <!doctype html>
@@ -11,40 +21,209 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
+		<Gate />
 		<Header />
+
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			{next && <Countdown event={next} />}
+
+			<!-- Subscribe-once calendar feed -->
+			<div class="subscribe">
+				<span aria-hidden="true">🔔</span>
+				<span>
+					<strong>Never miss a gathering.</strong>
+					<a href="/feed.ics">Subscribe to our calendar</a> and every new
+					event shows up in yours automatically.
+				</span>
+			</div>
+
+			<!-- Tabs -->
+			<div class="tabs" role="tablist" aria-label="Event sections">
+				<button role="tab" id="tab-upcoming" aria-controls="panel-upcoming"
+					aria-selected="true" class="tab is-active" data-tab="upcoming">
+					Upcoming ({upcoming.length})
+				</button>
+				<button role="tab" id="tab-past" aria-controls="panel-past"
+					aria-selected="false" class="tab" data-tab="past">
+					Past ({past.length})
+				</button>
+			</div>
+
+			<!-- Type filter -->
+			{
+				typesPresent.length > 1 && (
+					<div class="filters" aria-label="Filter by type">
+						<button class="chip is-active" data-filter="all">All</button>
+						{typesPresent.map((t) => (
+							<button class="chip" data-filter={t}>
+								{TYPE_META[t].icon} {TYPE_META[t].label}
+							</button>
+						))}
+					</div>
+				)
+			}
+
+			<!-- Upcoming panel -->
+			<section id="panel-upcoming" role="tabpanel" aria-labelledby="tab-upcoming">
+				{
+					upcoming.length === 0 ? (
+						<p class="empty">No upcoming events yet — check back soon! 🌱</p>
+					) : (
+						<div class="grid">
+							{upcoming.map((e) => (
+								<div class="card-wrap" data-type={e.type}>
+									<EventCard event={e} />
+								</div>
+							))}
+						</div>
+					)
+				}
+			</section>
+
+			<!-- Past panel -->
+			<section id="panel-past" role="tabpanel" aria-labelledby="tab-past" hidden>
+				{
+					past.length === 0 ? (
+						<p class="empty">No past events to show yet.</p>
+					) : (
+						<div class="grid">
+							{past.map((e) => (
+								<div class="card-wrap" data-type={e.type}>
+									<EventCard event={e} past />
+								</div>
+							))}
+						</div>
+					)
+				}
+			</section>
 		</main>
+
 		<Footer />
+
+		<script>
+			// --- Tabs ---
+			const tabs = document.querySelectorAll<HTMLButtonElement>(".tab");
+			const panels: Record<string, HTMLElement | null> = {
+				upcoming: document.getElementById("panel-upcoming"),
+				past: document.getElementById("panel-past"),
+			};
+			function activate(name: string) {
+				tabs.forEach((t) => {
+					const on = t.dataset.tab === name;
+					t.classList.toggle("is-active", on);
+					t.setAttribute("aria-selected", on ? "true" : "false");
+				});
+				Object.entries(panels).forEach(([key, el]) => {
+					if (el) el.hidden = key !== name;
+				});
+			}
+			tabs.forEach((t) =>
+				t.addEventListener("click", () => activate(t.dataset.tab!)),
+			);
+			// If someone lands on an anchor inside the past panel, show it.
+			if (location.hash) {
+				const target = document.querySelector(location.hash);
+				if (target && document.getElementById("panel-past")?.contains(target)) {
+					activate("past");
+					target.scrollIntoView();
+				}
+			}
+
+			// --- Type filter (applies within the visible panel) ---
+			const chips = document.querySelectorAll<HTMLButtonElement>(".chip");
+			chips.forEach((chip) =>
+				chip.addEventListener("click", () => {
+					chips.forEach((c) => c.classList.remove("is-active"));
+					chip.classList.add("is-active");
+					const f = chip.dataset.filter;
+					document
+						.querySelectorAll<HTMLElement>(".card-wrap")
+						.forEach((w) => {
+							w.style.display =
+								f === "all" || w.dataset.type === f ? "" : "none";
+						});
+				}),
+			);
+		</script>
 	</body>
 </html>
+
+<style>
+	main {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 1.5em 1.25em 2em;
+		display: grid;
+		gap: 1.5em;
+	}
+	.subscribe {
+		display: flex;
+		gap: 0.6em;
+		align-items: flex-start;
+		background: var(--accent-wash);
+		border: 1px solid var(--hairline);
+		border-radius: 14px;
+		padding: 0.9em 1.1em;
+		font-size: 1.02rem;
+	}
+	.subscribe a {
+		color: var(--accent-ink);
+		font-weight: 700;
+	}
+	.tabs {
+		display: flex;
+		gap: 0.5em;
+		border-bottom: 2px solid var(--hairline);
+	}
+	.tab {
+		background: none;
+		border: none;
+		border-bottom: 3px solid transparent;
+		margin-bottom: -2px;
+		padding: 0.6em 0.9em;
+		font-size: 1.15rem;
+		font-weight: 700;
+		font-family: inherit;
+		color: var(--ink-soft);
+		cursor: pointer;
+	}
+	.tab.is-active {
+		color: var(--accent-ink);
+		border-bottom-color: var(--accent);
+	}
+	.filters {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4em;
+		margin-top: -0.5em;
+	}
+	.chip {
+		background: var(--surface);
+		border: 1px solid var(--hairline-strong);
+		border-radius: 999px;
+		padding: 0.35em 0.85em;
+		font-size: 0.95rem;
+		font-weight: 700;
+		font-family: inherit;
+		color: var(--ink-soft);
+		cursor: pointer;
+	}
+	.chip.is-active {
+		background: var(--accent);
+		border-color: var(--accent);
+		color: #fff;
+	}
+	.grid {
+		display: grid;
+		gap: 1.25em;
+	}
+	.empty {
+		text-align: center;
+		font-size: 1.15rem;
+		color: var(--ink-soft);
+		padding: 2em 1em;
+		background: var(--surface);
+		border: 1px dashed var(--hairline-strong);
+		border-radius: 16px;
+	}
+</style>

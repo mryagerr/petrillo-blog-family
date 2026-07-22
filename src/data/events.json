@@ -1,0 +1,111 @@
+[
+	{
+		"id": "summer-bbq-bocce-2026",
+		"title": "Summer BBQ & Bocce",
+		"type": "gathering",
+		"date": "2026-08-15",
+		"startTime": "12:00",
+		"endTime": "17:00",
+		"allDay": false,
+		"tbd": false,
+		"venue": "Lincoln Park — Pavilion #3",
+		"cityArea": "Riverside, near the big oak grove",
+		"isPrivateHome": false,
+		"mapUrl": "https://www.google.com/maps/search/?api=1&query=Lincoln+Park+Pavilion+3+Riverside",
+		"exactAddress": null,
+		"description": "Our yearly cookout is back! Burgers and sausage on the grill, a hard-fought bocce tournament, and plenty of shade. Bring the whole gang.",
+		"details": [
+			{ "label": "Dress", "value": "Casual — comfy shoes for bocce" },
+			{ "label": "Bring", "value": "A side dish or dessert to share (we've got the mains & drinks)" },
+			{ "label": "Kids", "value": "Absolutely — playground right next door" },
+			{ "label": "Parking", "value": "Free lot off Maple Ave; overflow street parking" }
+		],
+		"rsvp": { "type": "form", "hostFirstName": "Maria" },
+		"comingCount": 14,
+		"host": "Hosted by the Maria & Tony side",
+		"photos": [],
+		"recap": null
+	},
+	{
+		"id": "nonna-80th-birthday",
+		"title": "Nonna Petrillo's 80th Birthday",
+		"type": "birthday",
+		"date": null,
+		"startTime": null,
+		"endTime": null,
+		"allDay": true,
+		"tbd": true,
+		"venue": "A private home",
+		"cityArea": "Bay Ridge",
+		"isPrivateHome": true,
+		"mapUrl": null,
+		"exactAddress": "482 Poplar Street, Bay Ridge (please keep private)",
+		"description": "We're throwing Nonna a big surprise for her 80th! Details are still coming together — save the idea of a late-summer Sunday and we'll confirm the date soon.",
+		"details": [
+			{ "label": "Dress", "value": "Sunday best — Nonna loves seeing everyone dressed up" },
+			{ "label": "Bring", "value": "Your favorite photo of Nonna for the memory board" },
+			{ "label": "Kids", "value": "Yes — cousins welcome" },
+			{ "label": "Note", "value": "It's a SURPRISE 🤫 — please don't mention it to Nonna" }
+		],
+		"rsvp": { "type": "form", "hostFirstName": "Gina" },
+		"comingCount": null,
+		"host": "Hosted by the whole family",
+		"photos": [],
+		"recap": null
+	},
+	{
+		"id": "baby-g-baptism-2026",
+		"title": "Baptism Celebration for Baby G.",
+		"type": "baptism",
+		"date": "2026-09-12",
+		"startTime": "11:00",
+		"endTime": "15:00",
+		"allDay": false,
+		"tbd": false,
+		"venue": "St. Rocco's Church, then Rosa's Trattoria",
+		"cityArea": "Little Italy",
+		"isPrivateHome": false,
+		"mapUrl": "https://www.google.com/maps/search/?api=1&query=Rosa's+Trattoria+Little+Italy",
+		"exactAddress": null,
+		"description": "Join us as we welcome the newest little Petrillo into the family. Mass at 11, followed by a celebration lunch nearby.",
+		"details": [
+			{ "label": "Dress", "value": "Church-appropriate / semi-formal" },
+			{ "label": "Timing", "value": "Mass 11:00, lunch reception around 12:30" },
+			{ "label": "Kids", "value": "Very welcome — there's a kids' table at the lunch" },
+			{ "label": "Parking", "value": "Public garage on Mott St; street parking is tight" }
+		],
+		"rsvp": { "type": "form", "hostFirstName": "Tony" },
+		"comingCount": 22,
+		"host": "Hosted by the Tony & Sofia side",
+		"photos": [],
+		"recap": null
+	},
+	{
+		"id": "family-reunion-2025",
+		"title": "Petrillo Family Reunion 2025",
+		"type": "reunion",
+		"date": "2025-07-05",
+		"startTime": "11:00",
+		"endTime": "20:00",
+		"allDay": false,
+		"tbd": false,
+		"venue": "Willow Creek Grove",
+		"cityArea": "Hudson Valley",
+		"isPrivateHome": false,
+		"mapUrl": "https://www.google.com/maps/search/?api=1&query=Willow+Creek+Grove+Hudson+Valley",
+		"exactAddress": null,
+		"description": "Four generations, one very long table, and Nonna's famous braciole. Our biggest reunion yet.",
+		"details": [
+			{ "label": "Turnout", "value": "63 of us, from 6 states" }
+		],
+		"rsvp": null,
+		"comingCount": null,
+		"host": "Hosted by the whole family",
+		"photos": [
+			{ "src": "/blog-placeholder-1.jpg", "alt": "The whole Petrillo family gathered under the trees for a group photo" },
+			{ "src": "/blog-placeholder-2.jpg", "alt": "Long tables set for the reunion lunch in the grove" },
+			{ "src": "/blog-placeholder-3.jpg", "alt": "Cousins playing a game on the grass" }
+		],
+		"recap": "What a day. We ate for six hours straight, the kids ran wild until sundown, and Uncle Sal finally won the bocce cup after a decade of trying. Already counting down to next year."
+	}
+]
