@@ -1,64 +1,178 @@
-# Astro Starter Kit: Blog
+# The Petrillo Family — Events Website
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
+A simple, warm, mobile-first site for sharing **upcoming and past family events**
+with friends and relatives. No accounts, no app, no learning curve — open the
+link and you immediately see what's happening, when, and roughly where.
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+Built with [Astro](https://astro.build) as a static site and deployed on
+Cloudflare Workers.
 
-<!-- dash-content-start -->
+## What's on the site
 
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
+- **Upcoming Events** (soonest first) and **Past Events** (most recent first),
+  each shown as a friendly card.
+- A **live countdown** on the homepage to the next event.
+- **Add-to-calendar** buttons on every upcoming event — a `.ics` download and a
+  one-tap "Add to Google Calendar" link.
+- A **subscribable calendar feed** at `/calendar.ics` — relatives subscribe once
+  and every new event appears in their own calendar automatically.
+- A **footer info strip** with how to RSVP, a privacy note, and a contact path.
+- A **print-friendly** layout on each event page.
 
-Features:
+---
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-- ✅ Built-in Observability logging
+## Adding or editing an event
 
-<!-- dash-content-end -->
+Each event is a single Markdown file in **`src/content/events/`**. Copy an
+existing file, rename it (the file name becomes the URL), and edit the
+frontmatter at the top. Only `title`, `description`, and `pubDate` are required —
+everything else is optional and the card adjusts automatically.
 
-## Getting Started
+```markdown
+---
+title: "Summer BBQ"
+description: "A casual afternoon in the park — burgers, games, and cousins."
+type: "gathering"          # birthday | holiday | wedding | reunion | gathering | memorial | celebration
+pubDate: "Jul 22 2026"     # when you posted it
+eventDate: "Aug 15 2026"   # the day it happens (omit or set tbd: true if undecided)
+endDate: "Aug 15 2026"     # optional — only for multi-day events
+startTime: "12:00 PM"      # optional — omit for an all-day event
+locationName: "Riverside Park Pavilion"
+locationCity: "Springfield, IL"
+locationPrivate: false     # true = a private home (see PII rules below)
+mapUrl: "https://maps.google.com/?q=..."   # OK for PUBLIC venues only
+host: "the Maria & Tony side"
+rsvpUrl: "https://forms.gle/your-form"      # optional; falls back to the contact path
+rsvpNote: "Let us know by Aug 1."           # optional
+comingCount: 14            # optional — a NUMBER ONLY, never a guest list
+heroImage: "/event-placeholder.svg"         # optional
+details:                   # optional bullet list of "what to know"
+  - "Kid-friendly!"
+  - "Parking behind the pavilion."
+gallery:                   # optional; encouraged for past events (shown gated)
+  - { src: "/photos/bbq-1.jpg", alt: "Cousins at the grill" }
+recap: "What a day — see you next year!"     # optional; for past events
+tbd: false                 # true forces "Date TBD"
+draft: false               # true hides the event without deleting it
+---
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-starter-template
+Write the full description here in Markdown — itinerary tables, highlights,
+whatever you like. This body shows on the event's own page.
 ```
 
-A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://astro-blog-starter-template.templates.workers.dev)
+**Upcoming vs. Past is automatic.** Events are sorted by `eventDate` (or `endDate`
+for multi-day events). Anything today or later is Upcoming; anything in the past
+moves to Past. Undated / `tbd` events stay in Upcoming and read "Date TBD".
 
-## 🚀 Project Structure
+### Site-wide settings
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Names, the organizer/contact link, RSVP wording, the privacy note, and the
+access mode all live in **`src/consts.ts`** — edit them there in one place.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+---
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+## Public vs. gated mode
 
-Any static assets, like images, can be placed in the `public/` directory.
+The site can run two ways. The choice is a single line in `src/consts.ts`:
 
-## 🧞 Commands
+```ts
+export const ACCESS_MODE: "public" | "gated" = "public";
+```
 
-All commands are run from the root of the project, from a terminal:
+- **`"public"` (default, shipped):** anyone with the link can view. Private home
+  addresses, exact map pins, and photo galleries stay **hidden**. Cards for
+  private-home events show only the city plus the note _"you'll get the full
+  address after you RSVP."_
+- **`"gated"`:** full street addresses (`fullAddress`), private-home map links,
+  and photo galleries are **revealed**.
 
-| Command                           | Action                                           |
-| :-------------------------------- | :----------------------------------------------- |
-| `npm install`                     | Installs dependencies                            |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`      |
-| `npm run build`                   | Build your production site to `./dist/`          |
-| `npm run preview`                 | Preview your build locally, before deploying     |
-| `npm run astro ...`               | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`         | Get help using the Astro CLI                     |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare        |
-| `npm wrangler tail`               | View real-time logs for all Workers              |
+> ⚠️ **Only switch to `"gated"` after you have actually put a gate in front of
+> the site**, or you'll expose private info on the open web. To add a gate on
+> Cloudflare, the simplest option is [Cloudflare Access](https://developers.cloudflare.com/cloudflare-one/policies/access/)
+> (email-based, or a shared PIN) in front of the Worker — no code changes
+> needed. Once the gate is live, set `ACCESS_MODE = "gated"` and redeploy.
 
-## 👀 Want to learn more?
+Switching modes changes only what's rendered, so it's easy to flip later.
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## The calendar feed (ICS)
+
+Everything is generated automatically from your event files — you never hand-edit
+an `.ics`.
+
+- **Per-event file:** `/events/<event-id>.ics` (the "Add to calendar (.ics)"
+  button). Generated by `src/pages/events/[slug].ics.ts`.
+- **Subscribable feed:** `/calendar.ics` — all events in one calendar. Generated
+  by `src/pages/calendar.ics.ts`. Relatives subscribe **once** and new events
+  appear automatically. To subscribe, use the site URL with `webcal://`, e.g.
+  `webcal://your-site.example.com/calendar.ics`, in Google/Apple Calendar → "Add
+  from URL".
+- **Google Calendar link:** built on the fly per event ("Add to Google Calendar"
+  button).
+
+The generation logic lives in `src/lib/events.ts` (dates, times, line-folding
+per RFC 5545, Google links). The feed carries **only** the PII-scrubbed info
+shown on the page — never a private street address.
+
+---
+
+## PII rules (please follow these)
+
+Include enough to understand and attend an event; strip anything that identifies
+or exposes individuals on the open web.
+
+**Omit or gate:**
+
+- Full home/street addresses — use `locationCity` + `locationName`; put the exact
+  address in `fullAddress` (revealed only in gated mode) and set
+  `locationPrivate: true` for private homes.
+- Personal phone numbers and personal emails — route responses through
+  `rsvpUrl` (a form) or the shared `CONTACT_URL` alias in `src/consts.ts`.
+- Last names of minors; children's schools, grades, or routines.
+- Anyone's full date of birth ("80th" is fine; "born 03/14/1945" is not).
+- Financial/account info (a gift-registry **link** is fine).
+- Health, medical, or other sensitive context.
+- Photo metadata — **strip EXIF** from images before adding them to
+  `public/` (most phones can "remove location" when sharing; or use a tool like
+  `exiftool -all= photo.jpg`).
+
+**"Who's coming"** may be shown as a **number only** (`comingCount`) — never a
+named guest list.
+
+---
+
+## Running locally
+
+```bash
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # production build to ./dist/
+npm run deploy   # build + deploy to Cloudflare Workers
+```
+
+## Project layout
+
+```
+src/
+  consts.ts               # site title, organizer, RSVP/contact, ACCESS_MODE, event types
+  content.config.ts       # the event data model (frontmatter schema)
+  content/events/*.md     # one Markdown file per event  ← add events here
+  lib/events.ts           # sorting, PII gating, and .ics / Google Calendar helpers
+  components/             # cards, countdown, calendar buttons, footer strip, etc.
+  layouts/EventPost.astro # single-event page (with print styles)
+  pages/
+    index.astro           # homepage: countdown + Upcoming + Past
+    events/[...slug].astro # an event's own page
+    events/[slug].ics.ts   # per-event .ics download
+    calendar.ics.ts        # subscribable feed
+    rss.xml.js             # human-readable content feed
+public/                   # images and fonts (put event photos here)
+```
 
 ## Credit
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Theme based on the Astro blog starter, itself based on
+[Bear Blog](https://github.com/HermanMartinus/bearblog/). Uses the
+[Atkinson Hyperlegible](https://www.brailleinstitute.org/freefont/) font for
+readability.

@@ -1,9 +1,19 @@
 ---
-title: "Michael Petrillo's 40th Birthday"
-description: "Ten days of desert adventures for Michael's 40th — MGM, Zion, and Mandalay Bay."
+title: "Michael's 40th Birthday Trip"
+description: "Ten days of desert adventures for Michael's 40th — lazy rivers on the Strip, canyon hikes in Zion, and time together as a family. Everyone's welcome to join for part or all of it."
+type: "birthday"
 pubDate: "Jul 22 2026"
 eventDate: "Jun 15 2027"
-heroImage: "/blog-placeholder-1.jpg"
+endDate: "Jun 25 2027"
+locationName: "Las Vegas & Zion National Park"
+locationCity: "Nevada & Utah"
+host: "Michael"
+rsvpNote: "Coming along? Let Michael know which days you can make it."
+heroImage: "/event-placeholder.svg"
+details:
+  - "Kid-friendly — pool days, a lazy river, and easy adventures for all ages."
+  - "Pack for the desert: sun protection, water shoes for The Narrows, and layers for cool canyon mornings."
+  - "Join for the whole ten days or just the part that works for you."
 ---
 
 Michael is turning **40**, and we're celebrating with a ten-day road trip through

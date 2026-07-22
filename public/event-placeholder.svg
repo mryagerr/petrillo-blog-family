@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Warm desert canyon scene">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbe6c9"/>
+      <stop offset="55%" stop-color="#f3c48a"/>
+      <stop offset="100%" stop-color="#e8a765"/>
+    </linearGradient>
+    <linearGradient id="mesaBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d98a4e"/>
+      <stop offset="100%" stop-color="#c77b45"/>
+    </linearGradient>
+    <linearGradient id="mesaMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c05621"/>
+      <stop offset="100%" stop-color="#a8481a"/>
+    </linearGradient>
+    <linearGradient id="mesaFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a3a12"/>
+      <stop offset="100%" stop-color="#6e2e0d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#sky)"/>
+  <circle cx="880" cy="180" r="80" fill="#fff3df" opacity="0.9"/>
+  <!-- far mesas -->
+  <path d="M0 420 L160 360 L160 300 L320 300 L320 360 L520 340 L700 380 L900 330 L1050 360 L1200 340 L1200 600 L0 600 Z" fill="url(#mesaBack)"/>
+  <!-- mid mesas -->
+  <path d="M0 480 L120 440 L300 460 L360 400 L520 400 L560 450 L780 430 L820 380 L980 380 L1020 440 L1200 420 L1200 600 L0 600 Z" fill="url(#mesaMid)"/>
+  <!-- foreground -->
+  <path d="M0 560 L200 520 L420 540 L640 510 L880 540 L1080 515 L1200 540 L1200 600 L0 600 Z" fill="url(#mesaFront)"/>
+</svg>

@@ -1,0 +1,63 @@
+---
+import type { EventEntry } from "../lib/events";
+import { ORGANIZER_NAME, CONTACT_URL } from "../consts";
+
+interface Props {
+	event: EventEntry;
+}
+
+const { event } = Astro.props;
+const { rsvpUrl, rsvpNote, comingCount } = event.data;
+// Fall back to a "let the organizer know" prompt routed through the shared
+// contact path — never a raw personal phone/email in public view.
+const href = rsvpUrl ?? CONTACT_URL;
+const note = rsvpNote ?? `Let ${ORGANIZER_NAME} know you're coming.`;
+---
+
+<div class="rsvp">
+	<a class="rsvp-btn" href={href} target="_blank" rel="noopener">
+		<span aria-hidden="true">✉️</span> RSVP
+	</a>
+	<span class="rsvp-note">{note}</span>
+	{
+		typeof comingCount === "number" && (
+			<span class="coming-count">{comingCount} coming</span>
+		)
+	}
+</div>
+
+<style>
+	.rsvp {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.6rem;
+	}
+	.rsvp-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35em;
+		padding: 0.5em 1.1em;
+		border-radius: 10px;
+		background: var(--accent);
+		color: white;
+		font-weight: 700;
+		text-decoration: none;
+		transition: 0.15s ease;
+	}
+	.rsvp-btn:hover {
+		background: var(--accent-dark);
+		color: white;
+	}
+	.rsvp-note {
+		color: rgb(var(--gray-dark));
+	}
+	.coming-count {
+		padding: 0.2em 0.7em;
+		border-radius: 999px;
+		background: rgb(var(--gray-light));
+		font-size: 0.85rem;
+		font-weight: 700;
+		color: rgb(var(--gray-dark));
+	}
+</style>

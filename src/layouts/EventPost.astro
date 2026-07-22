@@ -1,0 +1,203 @@
+---
+import type { EventEntry } from "../lib/events";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import TypeTag from "../components/TypeTag.astro";
+import EventWhen from "../components/EventWhen.astro";
+import EventLocation from "../components/EventLocation.astro";
+import CalendarButtons from "../components/CalendarButtons.astro";
+import RsvpButton from "../components/RsvpButton.astro";
+import { mayRevealGallery } from "../lib/events";
+
+interface Props {
+	event: EventEntry;
+	isPast: boolean;
+}
+
+const { event, isPast } = Astro.props;
+const { title, description, heroImage, host, details, gallery, recap } =
+	event.data;
+const showGallery = mayRevealGallery() && gallery.length > 0;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={`${title} · The Petrillo Family`} description={description} image={heroImage} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<article>
+				{heroImage && (
+					<div class="hero">
+						<img src={heroImage} alt="" />
+					</div>
+				)}
+				<div class="event-head">
+					<TypeTag type={event.data.type} />
+					<h1>{title}</h1>
+					<div class="facts">
+						<EventWhen event={event} />
+						<EventLocation event={event} />
+						{host && <p class="host">Hosted by {host}</p>}
+					</div>
+
+					{!isPast && (
+						<div class="actions">
+							<RsvpButton event={event} />
+							<CalendarButtons event={event} />
+						</div>
+					)}
+					{isPast && recap && <p class="recap">“{recap}”</p>}
+				</div>
+
+				{details.length > 0 && (
+					<section class="know">
+						<h2>What to know</h2>
+						<ul>
+							{details.map((d) => <li>{d}</li>)}
+						</ul>
+					</section>
+				)}
+
+				<div class="prose">
+					<slot />
+				</div>
+
+				{showGallery && (
+					<section class="gallery-section">
+						<h2>Photos</h2>
+						<div class="gallery">
+							{gallery.map((photo) => (
+								<img src={photo.src} alt={photo.alt} loading="lazy" />
+							))}
+						</div>
+					</section>
+				)}
+
+				<p class="back no-print"><a href="/">← Back to all events</a></p>
+			</article>
+			<button class="print-btn no-print" type="button" onclick="window.print()">
+				🖨️ Print this event
+			</button>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 760px;
+	}
+	.hero img {
+		display: block;
+		width: 100%;
+		max-height: 420px;
+		object-fit: cover;
+		border-radius: 16px;
+		box-shadow: var(--box-shadow);
+	}
+	.event-head {
+		margin: 2rem 0;
+	}
+	.event-head h1 {
+		margin: 0.6rem 0 1rem;
+	}
+	.facts {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		font-size: 1.1rem;
+		margin-bottom: 1.5rem;
+	}
+	.host {
+		margin: 0;
+		color: rgb(var(--gray));
+		font-style: italic;
+	}
+	.actions {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		padding: 1.25rem 0;
+		border-top: 1px solid rgb(var(--gray-light));
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.recap {
+		padding-left: 1rem;
+		border-left: 3px solid var(--accent);
+		font-style: italic;
+		font-size: 1.2rem;
+	}
+	.know {
+		margin: 2rem 0;
+		padding: 1.25rem 1.5rem;
+		background: rgba(var(--gray-light), 45%);
+		border-radius: 14px;
+	}
+	.know h2 {
+		margin-top: 0;
+		font-size: 1.5rem;
+	}
+	.know ul {
+		margin: 0;
+		padding-left: 1.2rem;
+	}
+	.know li {
+		margin-bottom: 0.4rem;
+	}
+	.prose {
+		color: rgb(var(--gray-dark));
+	}
+	.gallery-section {
+		margin: 2.5rem 0;
+	}
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+		gap: 0.75rem;
+	}
+	.gallery img {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		border-radius: 12px;
+	}
+	.back {
+		margin-top: 2.5rem;
+		font-weight: 700;
+	}
+	.print-btn {
+		display: block;
+		margin: 1rem auto 0;
+		padding: 0.5em 1.2em;
+		border-radius: 10px;
+		border: 2px solid rgb(var(--gray-light));
+		background: white;
+		color: rgb(var(--gray-dark));
+		font-weight: 700;
+		font-family: inherit;
+		font-size: 0.95rem;
+		cursor: pointer;
+	}
+	.print-btn:hover {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+
+	@media print {
+		.no-print,
+		:global(header),
+		:global(footer) {
+			display: none !important;
+		}
+		main {
+			width: 100%;
+		}
+		.hero img {
+			max-height: 260px;
+			box-shadow: none;
+		}
+	}
+</style>

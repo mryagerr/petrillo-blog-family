@@ -1,0 +1,44 @@
+---
+import type { EventEntry } from "../lib/events";
+
+interface Props {
+	event: EventEntry;
+}
+
+const { event } = Astro.props;
+const { eventDate, endDate, startTime, tbd } = event.data;
+
+const fmt = (d: Date) =>
+	d.toLocaleDateString("en-us", {
+		weekday: "long",
+		month: "long",
+		day: "numeric",
+		year: "numeric",
+	});
+
+let whenText: string;
+if (tbd || !eventDate) {
+	whenText = "Date TBD — check back soon";
+} else if (endDate && endDate.valueOf() !== eventDate.valueOf()) {
+	whenText = `${fmt(eventDate)} – ${fmt(endDate)}`;
+} else {
+	whenText = fmt(eventDate);
+	whenText += startTime ? ` · ${startTime}` : " · All day";
+}
+---
+
+<p class="when">
+	<span aria-hidden="true">🗓️</span>
+	<span>{whenText}</span>
+</p>
+
+<style>
+	.when {
+		display: flex;
+		align-items: baseline;
+		gap: 0.5em;
+		margin: 0;
+		font-weight: 700;
+		color: rgb(var(--black));
+	}
+</style>
