@@ -117,6 +117,32 @@ shown on the page — never a private street address.
 
 ---
 
+## Link previews (the image shown when you paste a URL in a chat)
+
+When you paste a page URL into iMessage, WhatsApp, Slack, Discord, Facebook, X,
+etc., those apps fetch the page and show a preview card with a title, description,
+and image. This site already emits the tags for that (`src/components/BaseHead.astro`).
+Two things make the image actually appear:
+
+1. **Set your real domain** in `astro.config.mjs` (`site:`). Pages are prerendered
+   to static HTML, so the preview image link is baked in at build time. While it's
+   left as `https://example.com`, the preview points at the wrong host and no image
+   shows. Set it to your deployed URL and redeploy.
+2. **Use a PNG/JPG image, not an SVG.** Preview scrapers don't render SVG. The
+   bundled preview card `public/event-preview.png` (1200×630) is used by default,
+   and any event whose `heroImage` is an `.svg` automatically falls back to it for
+   the preview. To give an event its own preview image, set `heroImage` to a
+   **`.png` or `.jpg`** (ideally ~1200×630).
+
+Note: in **gated** mode the preview scraper can't get past the access gate, so
+private links won't show a preview — that's expected.
+
+After changing the domain or an image, use Facebook's
+[Sharing Debugger](https://developers.facebook.com/tools/debug/) to re-scrape the
+URL, since chat apps cache previews aggressively.
+
+---
+
 ## PII rules (please follow these)
 
 Include enough to understand and attend an event; strip anything that identifies

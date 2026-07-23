@@ -3,6 +3,8 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 
+import { SITE_TITLE } from '../consts';
+
 interface Props {
 	title: string;
 	description: string;
@@ -11,7 +13,26 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/event-placeholder.svg' } = Astro.props;
+// Link-preview scrapers (iMessage, WhatsApp, Slack, Discord, X, Facebook,
+// LinkedIn, Signal…) do NOT render SVG, so the social image must be a PNG/JPG.
+// If an event's heroImage is an SVG, fall back to the raster preview so the
+// card still shows an image. Local (non-http) SVG paths are swapped out here.
+const rawImage = Astro.props.image ?? '/event-preview.png';
+const socialImage = rawImage.startsWith('http')
+	? rawImage
+	: rawImage.endsWith('.svg')
+		? '/event-preview.png'
+		: rawImage;
+
+const { title, description } = Astro.props;
+// Absolute URL — scrapers require the og:image to be fully-qualified. Resolve
+// against the live request URL (Astro.url) so this works on the real deployed
+// host even while `site` in astro.config.mjs is still a placeholder.
+const imageURL = new URL(socialImage, Astro.url);
+// We only know the exact dimensions/type of our bundled preview image. Emit the
+// size hints (which help cards render instantly) only when we're serving it; for
+// a custom hero photo of unknown size, let scrapers measure it themselves.
+const isKnownPreview = socialImage === '/event-preview.png';
 ---
 
 <!-- Global Metadata -->
@@ -34,14 +55,25 @@ const { title, description, image = '/event-placeholder.svg' } = Astro.props;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content={SITE_TITLE} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:image:secure_url" content={imageURL} />
+<meta property="og:image:alt" content={title} />
+{isKnownPreview && (
+	<>
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+	</>
+)}
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={imageURL} />
+<meta property="twitter:image:alt" content={title} />
