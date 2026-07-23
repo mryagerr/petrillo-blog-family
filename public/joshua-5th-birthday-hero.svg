@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="A sunny summer birthday party with colorful water balloons flying and splashing over green grass">
+  <defs>
+    <linearGradient id="jbSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fd3f4"/>
+      <stop offset="55%" stop-color="#bfe6f7"/>
+      <stop offset="100%" stop-color="#e6f6fb"/>
+    </linearGradient>
+    <linearGradient id="jbGrass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7cc14f"/>
+      <stop offset="100%" stop-color="#4e9a35"/>
+    </linearGradient>
+    <linearGradient id="jbGrassBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a3d977"/>
+      <stop offset="100%" stop-color="#7cc14f"/>
+    </linearGradient>
+    <radialGradient id="jbSun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff6c9"/>
+      <stop offset="100%" stop-color="#ffd54a"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#jbSky)"/>
+
+  <!-- sun with rays -->
+  <g transform="translate(1010,140)">
+    <g stroke="#ffe07a" stroke-width="10" stroke-linecap="round" opacity="0.85">
+      <line x1="0" y1="-118" x2="0" y2="-92"/>
+      <line x1="0" y1="118" x2="0" y2="92"/>
+      <line x1="-118" y1="0" x2="-92" y2="0"/>
+      <line x1="118" y1="0" x2="92" y2="0"/>
+      <line x1="-83" y1="-83" x2="-65" y2="-65"/>
+      <line x1="83" y1="-83" x2="65" y2="-65"/>
+      <line x1="-83" y1="83" x2="-65" y2="65"/>
+      <line x1="83" y1="83" x2="65" y2="65"/>
+    </g>
+    <circle cx="0" cy="0" r="74" fill="url(#jbSun)"/>
+  </g>
+
+  <!-- fluffy clouds -->
+  <g fill="#ffffff" opacity="0.9">
+    <g transform="translate(230,120)">
+      <ellipse cx="0" cy="0" rx="58" ry="34"/>
+      <ellipse cx="52" cy="10" rx="46" ry="28"/>
+      <ellipse cx="-48" cy="12" rx="40" ry="24"/>
+    </g>
+    <g transform="translate(620,80)" opacity="0.8">
+      <ellipse cx="0" cy="0" rx="44" ry="26"/>
+      <ellipse cx="40" cy="8" rx="34" ry="21"/>
+      <ellipse cx="-38" cy="9" rx="30" ry="18"/>
+    </g>
+  </g>
+
+  <!-- party bunting -->
+  <g>
+    <path d="M0 46 Q300 96 600 58 Q900 20 1200 62" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.7"/>
+    <g>
+      <polygon points="70,58 106,60 88,96" fill="#ff6b6b"/>
+      <polygon points="150,62 186,56 172,94" fill="#ffd54a"/>
+      <polygon points="232,58 268,50 256,88" fill="#4dabf7"/>
+      <polygon points="316,52 352,46 342,82" fill="#69db7c"/>
+      <polygon points="404,46 440,42 432,78" fill="#da77f2"/>
+      <polygon points="900,40 936,46 916,82" fill="#ff6b6b"/>
+      <polygon points="984,46 1020,54 998,90" fill="#ffd54a"/>
+      <polygon points="1068,54 1104,62 1080,96" fill="#4dabf7"/>
+    </g>
+  </g>
+
+  <!-- rolling grass -->
+  <path d="M0 470 Q300 420 600 460 Q900 496 1200 448 L1200 600 L0 600 Z" fill="url(#jbGrassBack)"/>
+  <path d="M0 520 Q320 486 620 520 Q900 552 1200 512 L1200 600 L0 600 Z" fill="url(#jbGrass)"/>
+
+  <!-- splash puddle on the grass -->
+  <g transform="translate(470,528)">
+    <ellipse cx="0" cy="0" rx="120" ry="26" fill="#bfe6f7" opacity="0.75"/>
+    <ellipse cx="0" cy="-4" rx="78" ry="16" fill="#8fd3f4" opacity="0.8"/>
+    <g fill="#8fd3f4">
+      <circle cx="-96" cy="-20" r="7"/>
+      <circle cx="-70" cy="-34" r="5"/>
+      <circle cx="86" cy="-22" r="8"/>
+      <circle cx="62" cy="-38" r="5"/>
+      <circle cx="10" cy="-46" r="6"/>
+    </g>
+  </g>
+
+  <!-- water balloon helper shapes -->
+  <!-- balloon: teardrop body + tied knot + highlight -->
+  <!-- red balloon, flying -->
+  <g transform="translate(300,300) rotate(-18)">
+    <path d="M0 -46 C34 -46 44 -14 44 12 C44 42 22 62 0 62 C-22 62 -44 42 -44 12 C-44 -14 -34 -46 0 -46 Z" fill="#ff6b6b"/>
+    <path d="M-6 66 L0 60 L6 66 L2 76 Z" fill="#e64f4f"/>
+    <ellipse cx="-16" cy="-8" rx="9" ry="14" fill="#ffffff" opacity="0.45"/>
+  </g>
+
+  <!-- yellow balloon -->
+  <g transform="translate(760,240) rotate(14)">
+    <path d="M0 -40 C30 -40 38 -12 38 10 C38 37 19 54 0 54 C-19 54 -38 37 -38 10 C-38 -12 -30 -40 0 -40 Z" fill="#ffd54a"/>
+    <path d="M-5 58 L0 52 L5 58 L2 67 Z" fill="#e9be3a"/>
+    <ellipse cx="-14" cy="-6" rx="8" ry="12" fill="#ffffff" opacity="0.5"/>
+  </g>
+
+  <!-- blue balloon, big -->
+  <g transform="translate(560,360) rotate(-8)">
+    <path d="M0 -54 C40 -54 52 -16 52 14 C52 50 26 72 0 72 C-26 72 -52 50 -52 14 C-52 -16 -40 -54 0 -54 Z" fill="#4dabf7"/>
+    <path d="M-7 77 L0 70 L7 77 L2 88 Z" fill="#3f92d6"/>
+    <ellipse cx="-19" cy="-10" rx="11" ry="16" fill="#ffffff" opacity="0.45"/>
+  </g>
+
+  <!-- green balloon -->
+  <g transform="translate(920,360) rotate(20)">
+    <path d="M0 -42 C31 -42 40 -13 40 11 C40 39 20 57 0 57 C-20 57 -40 39 -40 11 C-40 -13 -31 -42 0 -42 Z" fill="#69db7c"/>
+    <path d="M-5 61 L0 55 L5 61 L2 70 Z" fill="#54bd66"/>
+    <ellipse cx="-15" cy="-6" rx="8" ry="13" fill="#ffffff" opacity="0.5"/>
+  </g>
+
+  <!-- purple balloon, small high -->
+  <g transform="translate(150,200) rotate(-24)">
+    <path d="M0 -32 C24 -32 31 -9 31 9 C31 30 15 44 0 44 C-15 44 -31 30 -31 9 C-31 -9 -24 -32 0 -32 Z" fill="#da77f2"/>
+    <path d="M-4 47 L0 42 L4 47 L2 55 Z" fill="#c05fd8"/>
+    <ellipse cx="-11" cy="-4" rx="6" ry="10" fill="#ffffff" opacity="0.5"/>
+  </g>
+
+  <!-- an orange balloon mid-burst with a splash -->
+  <g transform="translate(430,430)">
+    <g fill="#ffa94d">
+      <path d="M-4 0 C-30 -18 -22 -46 0 -40 C24 -46 30 -16 6 2 Z" opacity="0.9"/>
+    </g>
+    <g fill="#8fd3f4">
+      <path d="M0 -10 C-8 -40 -30 -44 -40 -60 C-24 -52 -16 -60 -6 -78" fill="none" stroke="#8fd3f4" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="-42" cy="-64" r="7"/>
+      <circle cx="-8" cy="-84" r="6"/>
+      <circle cx="22" cy="-58" r="8"/>
+      <circle cx="40" cy="-30" r="6"/>
+      <circle cx="30" cy="-72" r="5"/>
+    </g>
+  </g>
+
+  <!-- flying water droplets scattered -->
+  <g fill="#8fd3f4" opacity="0.85">
+    <circle cx="380" cy="170" r="8"/>
+    <circle cx="640" cy="150" r="6"/>
+    <circle cx="850" cy="180" r="9"/>
+    <circle cx="1080" cy="300" r="7"/>
+    <circle cx="240" cy="360" r="7"/>
+    <circle cx="700" cy="430" r="8"/>
+  </g>
+
+  <!-- confetti -->
+  <g opacity="0.9">
+    <rect x="200" y="250" width="12" height="12" rx="2" fill="#ff6b6b" transform="rotate(20 206 256)"/>
+    <rect x="480" y="200" width="12" height="12" rx="2" fill="#ffd54a" transform="rotate(-15 486 206)"/>
+    <rect x="1000" y="240" width="12" height="12" rx="2" fill="#69db7c" transform="rotate(30 1006 246)"/>
+    <rect x="120" y="330" width="12" height="12" rx="2" fill="#4dabf7" transform="rotate(-25 126 336)"/>
+    <rect x="820" y="290" width="12" height="12" rx="2" fill="#da77f2" transform="rotate(12 826 296)"/>
+  </g>
+
+  <!-- number 5 balloon accent, lower right -->
+  <g transform="translate(1050,470)">
+    <ellipse cx="0" cy="0" rx="66" ry="72" fill="#ff8fab"/>
+    <ellipse cx="-22" cy="-24" rx="14" ry="20" fill="#ffffff" opacity="0.4"/>
+    <path d="M-12 44 L0 56 L12 44 L4 40 L-4 40 Z" fill="#e86e8c"/>
+    <text x="0" y="20" text-anchor="middle" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-size="86" font-weight="700" fill="#ffffff">5</text>
+  </g>
+</svg>
