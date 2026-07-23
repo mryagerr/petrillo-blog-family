@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Mount Fuji at dawn with a vermilion torii gate">
+  <defs>
+    <linearGradient id="jpSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cfe0f0"/>
+      <stop offset="55%" stop-color="#f3dcd0"/>
+      <stop offset="100%" stop-color="#f7e7dc"/>
+    </linearGradient>
+    <linearGradient id="jpFuji" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7d93b0"/>
+      <stop offset="100%" stop-color="#5f7595"/>
+    </linearGradient>
+    <linearGradient id="jpHillBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9db7ab"/>
+      <stop offset="100%" stop-color="#89a798"/>
+    </linearGradient>
+    <linearGradient id="jpHillMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6f9585"/>
+      <stop offset="100%" stop-color="#5c8171"/>
+    </linearGradient>
+    <linearGradient id="jpFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#43655a"/>
+      <stop offset="100%" stop-color="#33514a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#jpSky)"/>
+  <!-- rising sun -->
+  <circle cx="880" cy="175" r="78" fill="#ef9a80" opacity="0.85"/>
+  <!-- Mount Fuji -->
+  <path d="M290 470 C 440 350 545 225 600 190 C 655 225 760 350 910 470 Z" fill="url(#jpFuji)"/>
+  <!-- snow cap -->
+  <path d="M512 300 C 552 245 582 208 600 190 C 618 208 648 245 688 300 C 665 288 646 302 626 294 C 610 288 590 288 574 294 C 554 302 535 288 512 300 Z" fill="#f4f7fb"/>
+  <!-- far hills -->
+  <path d="M0 470 L150 440 L330 462 L470 438 L650 466 L820 440 L1000 468 L1200 446 L1200 600 L0 600 Z" fill="url(#jpHillBack)"/>
+  <!-- mid hills -->
+  <path d="M0 512 L180 486 L360 508 L520 482 L720 512 L900 484 L1080 512 L1200 496 L1200 600 L0 600 Z" fill="url(#jpHillMid)"/>
+  <!-- foreground (lake shore) -->
+  <path d="M0 560 L220 540 L440 556 L660 536 L880 558 L1080 538 L1200 556 L1200 600 L0 600 Z" fill="url(#jpFront)"/>
+  <!-- vermilion torii gate -->
+  <g fill="#c0392b">
+    <!-- posts -->
+    <rect x="152" y="446" width="21" height="118"/>
+    <rect x="239" y="446" width="21" height="118"/>
+    <!-- kasagi (curved top beam) -->
+    <path d="M126 448 Q206 426 286 448 L286 430 Q206 404 126 430 Z"/>
+    <!-- nuki (lower beam) -->
+    <rect x="145" y="484" width="122" height="15"/>
+  </g>
+</svg>

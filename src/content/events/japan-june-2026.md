@@ -7,7 +7,7 @@ eventDate: "Jun 5 2026"
 endDate: "Jun 24 2026"
 locationName: "Tokyo, Hakone & Osaka"
 locationCity: "Japan"
-heroImage: "/event-placeholder.svg"
+heroImage: "/japan-2026-placeholder.svg"
 details:
   - "Travelers: Michael, Brittany, and the two boys (ages 7 and 4)."
   - "Fully car-free — Shinkansen, local rail and metro, the Hakone Freepass, buses, and Yamato luggage forwarding between every leg."
