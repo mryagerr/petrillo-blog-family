@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="The San Diego Convention Center with its white sail roof along the bay, with 2025 in the sky">
+  <defs>
+    <linearGradient id="scSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9d6a3"/>
+      <stop offset="45%" stop-color="#f7b98f"/>
+      <stop offset="100%" stop-color="#f2a09a"/>
+    </linearGradient>
+    <linearGradient id="scBay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5b8fb0"/>
+      <stop offset="100%" stop-color="#3f7091"/>
+    </linearGradient>
+    <linearGradient id="scBuilding" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4f7fb"/>
+      <stop offset="100%" stop-color="#d3dbe6"/>
+    </linearGradient>
+    <linearGradient id="scSail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e4ebf3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#scSky)"/>
+
+  <!-- setting sun -->
+  <circle cx="250" cy="180" r="80" fill="#ffe6b0" opacity="0.9"/>
+
+  <!-- palm trees, foreground left -->
+  <g stroke="#6b4a3a" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M90 560 Q98 430 108 350"/>
+    <path d="M1120 560 Q1112 440 1104 370"/>
+  </g>
+  <g fill="#3f8f5a">
+    <g transform="translate(108,348)">
+      <path d="M0 0 Q-70 -34 -120 -8 Q-64 -18 0 4 Z"/>
+      <path d="M0 0 Q70 -34 120 -8 Q64 -18 0 4 Z"/>
+      <path d="M0 0 Q-40 -68 -78 -84 Q-32 -46 2 -2 Z"/>
+      <path d="M0 0 Q40 -68 78 -84 Q32 -46 -2 -2 Z"/>
+    </g>
+    <g transform="translate(1104,368)">
+      <path d="M0 0 Q-60 -30 -104 -6 Q-56 -16 0 4 Z"/>
+      <path d="M0 0 Q60 -30 104 -6 Q56 -16 0 4 Z"/>
+      <path d="M0 0 Q-34 -60 -68 -74 Q-28 -40 2 -2 Z"/>
+      <path d="M0 0 Q34 -60 68 -74 Q28 -40 -2 -2 Z"/>
+    </g>
+  </g>
+
+  <!-- convention center building -->
+  <rect x="120" y="360" width="960" height="150" fill="url(#scBuilding)"/>
+  <!-- window band -->
+  <g fill="#9fc0d6" opacity="0.85">
+    <rect x="150" y="392" width="900" height="30"/>
+  </g>
+  <g fill="#7ba7c2" opacity="0.6">
+    <rect x="170" y="392" width="4" height="30"/>
+    <rect x="230" y="392" width="4" height="30"/>
+    <rect x="290" y="392" width="4" height="30"/>
+    <rect x="350" y="392" width="4" height="30"/>
+    <rect x="410" y="392" width="4" height="30"/>
+    <rect x="470" y="392" width="4" height="30"/>
+    <rect x="530" y="392" width="4" height="30"/>
+    <rect x="590" y="392" width="4" height="30"/>
+    <rect x="650" y="392" width="4" height="30"/>
+    <rect x="710" y="392" width="4" height="30"/>
+    <rect x="770" y="392" width="4" height="30"/>
+    <rect x="830" y="392" width="4" height="30"/>
+    <rect x="890" y="392" width="4" height="30"/>
+    <rect x="950" y="392" width="4" height="30"/>
+    <rect x="1010" y="392" width="4" height="30"/>
+  </g>
+
+  <!-- the iconic white sail / tent roof -->
+  <g fill="url(#scSail)" stroke="#cdd7e2" stroke-width="2">
+    <path d="M300 360 Q360 250 420 360 Z"/>
+    <path d="M420 360 Q480 236 540 360 Z"/>
+    <path d="M540 360 Q600 226 660 360 Z"/>
+    <path d="M660 360 Q720 236 780 360 Z"/>
+    <path d="M780 360 Q840 250 900 360 Z"/>
+  </g>
+  <!-- sail masts -->
+  <g stroke="#b7c3d1" stroke-width="3">
+    <line x1="360" y1="360" x2="360" y2="300"/>
+    <line x1="480" y1="360" x2="480" y2="290"/>
+    <line x1="600" y1="360" x2="600" y2="282"/>
+    <line x1="720" y1="360" x2="720" y2="290"/>
+    <line x1="840" y1="360" x2="840" y2="300"/>
+  </g>
+
+  <!-- bay water -->
+  <rect y="510" width="1200" height="90" fill="url(#scBay)"/>
+  <g fill="#ffffff" opacity="0.18">
+    <rect x="0" y="524" width="1200" height="4"/>
+    <rect x="0" y="548" width="1200" height="4"/>
+    <rect x="0" y="572" width="1200" height="4"/>
+  </g>
+  <!-- building reflection -->
+  <rect x="120" y="510" width="960" height="30" fill="#e4ebf3" opacity="0.22"/>
+
+  <!-- 2025 in the sky -->
+  <text x="880" y="200" text-anchor="middle" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-size="150" font-weight="800" fill="#ffffff" opacity="0.92">2025</text>
+  <text x="880" y="252" text-anchor="middle" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-size="40" font-weight="700" letter-spacing="10" fill="#c0392b">COMIC-CON</text>
+
+  <!-- a couple of gulls -->
+  <g stroke="#6b4a3a" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6">
+    <path d="M470 150 Q484 138 498 150 Q512 138 526 150"/>
+    <path d="M560 110 Q570 101 580 110 Q590 101 600 110"/>
+  </g>
+</svg>
