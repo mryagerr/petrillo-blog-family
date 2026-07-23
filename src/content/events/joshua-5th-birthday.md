@@ -4,8 +4,12 @@ description: "Joshua is turning 5 — and we're celebrating with a sunny summer 
 type: "birthday"
 pubDate: "Jul 23 2026"
 eventDate: "Aug 29 2026"
+startTime: "11:00 AM"
+locationName: "The Petrillo home"
 locationPrivate: true
-rsvpNote: "Coming to help Joshua celebrate? Let us know so we can count heads (and water balloons)."
+host: "The Petrillo family"
+rsvpUrl: "https://evite.me/fyCf5qN9T4"
+rsvpNote: "Tap RSVP for the full address and to let us know you're coming — so we can count heads (and water balloons)."
 heroImage: "/joshua-5th-birthday-hero.svg"
 details:
   - "Kid-friendly summer party — water balloons and a splash zone, so come ready to get wet."
