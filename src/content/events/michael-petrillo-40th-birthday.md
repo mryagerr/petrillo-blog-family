@@ -56,6 +56,29 @@ TBD — most likely at **Desert Pearl**, with a focus on relaxing by the pool.
 | Thu, Jun 24 | Lazy river | Free evening |
 | Fri, Jun 25 | Drive home | — |
 
+## Where to Stay
+
+Three legs, three home bases. Book whichever works for your budget — here's what
+we recommend for each stretch.
+
+### 🎲 Las Vegas · Jun 15–19
+
+**MGM Grand** (or **MGM Signature**) — the pick for families. The pool complex has
+the **lazy river** the kids will live on all week, and the Signature towers are
+suite-style and a little quieter if you'd rather be away from the casino floor.
+
+### 🏜️ Zion · Jun 19–22
+
+**Desert Pearl Inn** — right on the Virgin River in Springdale, a short shuttle ride
+from the park entrance and steps from dinner. Any hotel **within the town of Zion
+(Springdale)** works well too; staying in town keeps you close to the trailheads and
+the free shuttle.
+
+### 🌴 Las Vegas · Jun 22–25
+
+**Mandalay Bay** — the wind-down leg. Its pool has another **lazy river** plus a wave
+pool and a sandy beach, so the last few days stay easy before the drive home.
+
 ## Highlights
 
 - **Las Vegas (MGM):** Three days of lazy river, a walk down the Strip, the Fremont
