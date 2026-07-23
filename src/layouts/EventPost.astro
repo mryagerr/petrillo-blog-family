@@ -16,7 +16,7 @@ interface Props {
 }
 
 const { event, isPast } = Astro.props;
-const { title, description, heroImage, host, details, gallery, recap } =
+const { title, description, heroImage, host, details, gallery, recap, albumUrl } =
 	event.data;
 const showGallery = mayRevealGallery() && gallery.length > 0;
 ---
@@ -50,6 +50,15 @@ const showGallery = mayRevealGallery() && gallery.length > 0;
 						</div>
 					)}
 					{isPast && recap && <p class="recap">“{recap}”</p>}
+
+					{albumUrl && (
+						<div class="album no-print">
+							<a class="album-btn" href={albumUrl} target="_blank" rel="noopener">
+								<span aria-hidden="true">📸</span> Trip Memories
+							</a>
+							<span class="album-note">See all the photos from the trip.</span>
+						</div>
+					)}
 				</div>
 
 				{details.length > 0 && (
@@ -129,6 +138,32 @@ const showGallery = mayRevealGallery() && gallery.length > 0;
 		border-left: 3px solid var(--accent);
 		font-style: italic;
 		font-size: 1.2rem;
+	}
+	.album {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.6rem;
+		margin-top: 1.25rem;
+	}
+	.album-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35em;
+		padding: 0.5em 1.1em;
+		border-radius: 10px;
+		background: var(--accent);
+		color: white;
+		font-weight: 700;
+		text-decoration: none;
+		transition: 0.15s ease;
+	}
+	.album-btn:hover {
+		background: var(--accent-dark);
+		color: white;
+	}
+	.album-note {
+		color: rgb(var(--gray-dark));
 	}
 	.know {
 		margin: 2rem 0;

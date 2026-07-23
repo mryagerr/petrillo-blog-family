@@ -75,6 +75,10 @@ const events = defineCollection({
 			.default([]),
 		// One-line recap for past events.
 		recap: z.string().optional(),
+		// Link to an external shared photo album (e.g. a Google Photos link) for
+		// trip memories. Shown as a prominent button near the top of the event —
+		// use for albums you're happy to share with anyone who has the site link.
+		albumUrl: z.string().url().optional(),
 
 		// Hide an event from the site without deleting it.
 		draft: z.boolean().default(false),

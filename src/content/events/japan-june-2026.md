@@ -20,6 +20,7 @@ gallery:
   - { src: "/photos/japan-2026/fushimi-inari.jpg", alt: "Fushimi Inari torii gates at dawn" }
   - { src: "/photos/japan-2026/teamlab.jpg", alt: "teamLab Borderless at Azabudai Hills" }
 recap: "19 nights, 4 legs, 3 theme parks, 2 day trips, 0 cars."
+albumUrl: "https://photos.app.goo.gl/oB9cfXrYWXXEif7cA"
 ---
 
 Nineteen nights in Japan for Michael, Brittany, and the two boys (7 and 4) —
