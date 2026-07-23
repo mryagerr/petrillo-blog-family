@@ -16,6 +16,11 @@ details:
   - "Join for the whole ten days or just the part that works for you."
 ---
 
+> **The party is in Zion — but the rest of the trip is up to you.** The one place
+> we're all coming together is Zion National Park. Everything around it is a
+> choose-what-makes-the-most-sense-for-you affair, so join for the whole ten days
+> or just the part that works for your family.
+
 Michael is turning **40**, and we're celebrating with a ten-day road trip through
 Las Vegas and Zion. Here's the plan — pool days, canyon hikes, and plenty of time
 on the lazy river.
@@ -88,3 +93,27 @@ pool and a sandy beach, so the last few days stay easy before the drive home.
   drive home.
 
 Here's to 40! 🎉
+
+## FAQs
+
+**Do I have to visit the whole trip?**
+No. It's choose what works for you — come for the whole ten days or just the part
+that fits your family.
+
+**What are the plans for Zion?**
+Going to The Narrows and tubing.
+
+**Will there be an adult-only night?**
+Yes — hoping to have more than one.
+
+**Why make the website?**
+Because I can.
+
+**How will I know the events for specific days?**
+The website will be updated as time goes on, closer to the date.
+
+**Any other big plans?**
+Hoping to see inside the Sphere, find a great restaurant to try, and explore the
+Strip with a band of people — maybe a dress-up theme. I don't know. It's a lot to
+get people to align their vacation, but hopefully by bringing a group together we
+can do more.
