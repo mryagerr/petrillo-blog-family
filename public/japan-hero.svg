@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Mount Fuji at dawn with a red torii gate and cherry blossoms">
+  <defs>
+    <linearGradient id="jpSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fde4ec"/>
+      <stop offset="45%" stop-color="#f8c6d8"/>
+      <stop offset="100%" stop-color="#f6d9c0"/>
+    </linearGradient>
+    <linearGradient id="jpFuji" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6d7fa8"/>
+      <stop offset="100%" stop-color="#8f9dbd"/>
+    </linearGradient>
+    <linearGradient id="jpHills" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7fa27a"/>
+      <stop offset="100%" stop-color="#5f8459"/>
+    </linearGradient>
+    <linearGradient id="jpWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9dbe6"/>
+      <stop offset="100%" stop-color="#a7c2d3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#jpSky)"/>
+  <!-- rising sun -->
+  <circle cx="880" cy="200" r="90" fill="#f7a8a0" opacity="0.85"/>
+  <!-- Mount Fuji -->
+  <path d="M340 470 L560 175 Q600 150 640 175 L860 470 Z" fill="url(#jpFuji)"/>
+  <!-- snow cap -->
+  <path d="M520 250 L582 168 Q600 152 618 168 L680 250 Q640 232 600 250 Q560 268 520 250 Z" fill="#f4f7fb"/>
+  <path d="M548 288 Q560 268 578 280 Q590 262 604 278 Q620 264 632 284 L648 300 Q600 285 548 288 Z" fill="#f4f7fb" opacity="0.9"/>
+  <!-- rolling hills -->
+  <path d="M0 480 L180 448 L360 470 L560 452 L780 476 L980 452 L1200 474 L1200 500 L0 500 Z" fill="url(#jpHills)"/>
+  <!-- water -->
+  <rect y="500" width="1200" height="100" fill="url(#jpWater)"/>
+  <!-- torii gate -->
+  <g fill="#c0392b">
+    <path d="M120 300 Q300 282 480 300 L480 322 Q300 304 120 322 Z"/>
+    <rect x="150" y="322" width="300" height="12"/>
+    <rect x="185" y="330" width="22" height="200"/>
+    <rect x="393" y="330" width="22" height="200"/>
+  </g>
+  <!-- torii reflection -->
+  <g fill="#c0392b" opacity="0.28">
+    <rect x="185" y="530" width="22" height="46"/>
+    <rect x="393" y="530" width="22" height="46"/>
+  </g>
+  <!-- cherry blossom branch -->
+  <g stroke="#6b4a3a" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M0 90 Q120 120 210 90 Q280 66 350 96"/>
+    <path d="M210 90 Q240 150 300 168"/>
+  </g>
+  <g fill="#f9b8cc">
+    <circle cx="60" cy="96" r="13"/>
+    <circle cx="120" cy="112" r="12"/>
+    <circle cx="175" cy="92" r="14"/>
+    <circle cx="238" cy="82" r="12"/>
+    <circle cx="300" cy="98" r="13"/>
+    <circle cx="270" cy="150" r="12"/>
+    <circle cx="300" cy="170" r="11"/>
+  </g>
+  <g fill="#fddce7">
+    <circle cx="90" cy="104" r="7"/>
+    <circle cx="150" cy="100" r="7"/>
+    <circle cx="210" cy="86" r="7"/>
+    <circle cx="270" cy="92" r="7"/>
+  </g>
+</svg>
