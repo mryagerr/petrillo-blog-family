@@ -25,7 +25,7 @@ export const ACCESS_MODE: "public" | "gated" = "public";
 export const ORGANIZER_NAME = "Michael";
 // A form URL or shared alias. Replace with your real RSVP/contact form or a
 // mailto to a shared family alias (not a personal address).
-export const CONTACT_URL = "mailto:petrillo.family.events@example.com";
+export const CONTACT_URL = "mailto:events@petrillo.vip";
 export const RSVP_INSTRUCTION =
 	"Tap “RSVP” on any event to let the host know you're coming.";
 export const PRIVACY_NOTE =
