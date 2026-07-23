@@ -22,19 +22,35 @@ on the lazy river.
 
 ## The Itinerary
 
-| Date | Spot | Day Activity | Night Activity |
-| --- | --- | --- | --- |
-| June 15 | Coming to MGM | Driving | Walk the Strip |
-| June 16 | MGM | Lazy River | Fremont Box Fort |
-| June 17 | MGM | Lazy River | Kid Movie Night |
-| June 18 | MGM | Lazy River | Some cool restaurant |
-| June 19 | MGM to Zion | Driving | — |
-| June 20 | Zion | The Narrows | — |
-| June 21 | Zion | Tubing | — |
-| June 22 | Zion to Mandalay | Driving | — |
-| June 23 | Mandalay Bay | Lazy River | — |
-| June 24 | Mandalay Bay | Lazy River | — |
-| June 25 | Mandalay to Home | Driving | — |
+The trip runs in three legs — four nights on the Vegas Strip, three in Zion, then
+three more back in Vegas before the drive home. Join for the whole ten days or just
+the leg that works for you.
+
+### 🎲 Las Vegas · MGM Grand — Jun 15–18
+
+| Date | Daytime | Evening |
+| --- | --- | --- |
+| Tue, Jun 15 | Arrive & settle in | Walk the Strip |
+| Wed, Jun 16 | Lazy river | Fremont Box Fort |
+| Thu, Jun 17 | Lazy river | Kid movie night |
+| Fri, Jun 18 | Lazy river | Dinner out |
+
+### 🏜️ Zion National Park — Jun 19–21
+
+| Date | Daytime | Evening |
+| --- | --- | --- |
+| Sat, Jun 19 | Drive to Zion | Free evening |
+| Sun, Jun 20 | Hike The Narrows | Free evening |
+| Mon, Jun 21 | Tubing | Free evening |
+
+### 🌴 Mandalay Bay · Las Vegas — Jun 22–25
+
+| Date | Daytime | Evening |
+| --- | --- | --- |
+| Tue, Jun 22 | Drive to Mandalay Bay | Free evening |
+| Wed, Jun 23 | Lazy river | Free evening |
+| Thu, Jun 24 | Lazy river | Free evening |
+| Fri, Jun 25 | Drive home | — |
 
 ## Highlights
 
