@@ -1,107 +1,184 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="The San Diego Convention Center with its white sail roof along the bay, with 2025 in the sky">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="A fun comic-book style scene of San Diego Comic-Con 2025: kids in superhero capes cheering in front of the convention center's sail roof and palm trees, with a POW starburst and a SDCC 2025 comic banner">
   <defs>
     <linearGradient id="scSky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f9d6a3"/>
-      <stop offset="45%" stop-color="#f7b98f"/>
-      <stop offset="100%" stop-color="#f2a09a"/>
+      <stop offset="0%" stop-color="#ffd76a"/>
+      <stop offset="55%" stop-color="#ffb14e"/>
+      <stop offset="100%" stop-color="#ff8f6b"/>
     </linearGradient>
     <linearGradient id="scBay" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#5b8fb0"/>
-      <stop offset="100%" stop-color="#3f7091"/>
+      <stop offset="0%" stop-color="#3fb3d6"/>
+      <stop offset="100%" stop-color="#2b8fbf"/>
     </linearGradient>
     <linearGradient id="scBuilding" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f4f7fb"/>
-      <stop offset="100%" stop-color="#d3dbe6"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d9e2ec"/>
     </linearGradient>
     <linearGradient id="scSail" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#e4ebf3"/>
+      <stop offset="100%" stop-color="#e6edf5"/>
     </linearGradient>
+    <radialGradient id="scBurst" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff3b0"/>
+      <stop offset="100%" stop-color="#ffcf3f"/>
+    </radialGradient>
+    <pattern id="scDots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="#ffffff" opacity="0.35"/>
+    </pattern>
   </defs>
 
+  <!-- sky -->
   <rect width="1200" height="600" fill="url(#scSky)"/>
+  <!-- halftone comic dots over the sky -->
+  <rect width="1200" height="360" fill="url(#scDots)"/>
 
-  <!-- setting sun -->
-  <circle cx="250" cy="180" r="80" fill="#ffe6b0" opacity="0.9"/>
-
-  <!-- palm trees, foreground left -->
-  <g stroke="#6b4a3a" stroke-width="10" stroke-linecap="round" fill="none">
-    <path d="M90 560 Q98 430 108 350"/>
-    <path d="M1120 560 Q1112 440 1104 370"/>
+  <!-- radial action rays behind everything -->
+  <g fill="#ffffff" opacity="0.16">
+    <polygon points="600,300 40,-40 200,-40"/>
+    <polygon points="600,300 360,-40 470,-40"/>
+    <polygon points="600,300 620,-40 720,-40"/>
+    <polygon points="600,300 900,-40 1010,-40"/>
+    <polygon points="600,300 1160,-40 1300,60"/>
+    <polygon points="600,300 -40,120 -40,260"/>
+    <polygon points="600,300 1240,160 1240,300"/>
   </g>
-  <g fill="#3f8f5a">
-    <g transform="translate(108,348)">
-      <path d="M0 0 Q-70 -34 -120 -8 Q-64 -18 0 4 Z"/>
-      <path d="M0 0 Q70 -34 120 -8 Q64 -18 0 4 Z"/>
-      <path d="M0 0 Q-40 -68 -78 -84 Q-32 -46 2 -2 Z"/>
-      <path d="M0 0 Q40 -68 78 -84 Q32 -46 -2 -2 Z"/>
+
+  <!-- sun -->
+  <circle cx="205" cy="150" r="66" fill="url(#scBurst)" stroke="#e8a13a" stroke-width="5"/>
+
+  <!-- palm trees -->
+  <g stroke="#7a5230" stroke-width="12" stroke-linecap="round" fill="none">
+    <path d="M96 470 Q104 350 116 280"/>
+    <path d="M1112 470 Q1104 360 1094 300"/>
+  </g>
+  <g fill="#2f9e5b" stroke="#1f7a44" stroke-width="3">
+    <g transform="translate(116,278)">
+      <path d="M0 0 Q-78 -40 -134 -10 Q-70 -22 0 6 Z"/>
+      <path d="M0 0 Q78 -40 134 -10 Q70 -22 0 6 Z"/>
+      <path d="M0 0 Q-46 -76 -88 -96 Q-34 -52 3 -3 Z"/>
+      <path d="M0 0 Q46 -76 88 -96 Q34 -52 -3 -3 Z"/>
+      <path d="M0 0 Q0 -92 0 -110 Q10 -70 6 -6 Z"/>
     </g>
-    <g transform="translate(1104,368)">
-      <path d="M0 0 Q-60 -30 -104 -6 Q-56 -16 0 4 Z"/>
-      <path d="M0 0 Q60 -30 104 -6 Q56 -16 0 4 Z"/>
-      <path d="M0 0 Q-34 -60 -68 -74 Q-28 -40 2 -2 Z"/>
-      <path d="M0 0 Q34 -60 68 -74 Q28 -40 -2 -2 Z"/>
+    <g transform="translate(1094,298)">
+      <path d="M0 0 Q-66 -34 -116 -8 Q-60 -18 0 6 Z"/>
+      <path d="M0 0 Q66 -34 116 -8 Q60 -18 0 6 Z"/>
+      <path d="M0 0 Q-38 -66 -74 -82 Q-30 -44 3 -3 Z"/>
+      <path d="M0 0 Q38 -66 74 -82 Q30 -44 -3 -3 Z"/>
     </g>
   </g>
 
   <!-- convention center building -->
-  <rect x="120" y="360" width="960" height="150" fill="url(#scBuilding)"/>
-  <!-- window band -->
-  <g fill="#9fc0d6" opacity="0.85">
-    <rect x="150" y="392" width="900" height="30"/>
-  </g>
-  <g fill="#7ba7c2" opacity="0.6">
-    <rect x="170" y="392" width="4" height="30"/>
-    <rect x="230" y="392" width="4" height="30"/>
-    <rect x="290" y="392" width="4" height="30"/>
-    <rect x="350" y="392" width="4" height="30"/>
-    <rect x="410" y="392" width="4" height="30"/>
-    <rect x="470" y="392" width="4" height="30"/>
-    <rect x="530" y="392" width="4" height="30"/>
-    <rect x="590" y="392" width="4" height="30"/>
-    <rect x="650" y="392" width="4" height="30"/>
-    <rect x="710" y="392" width="4" height="30"/>
-    <rect x="770" y="392" width="4" height="30"/>
-    <rect x="830" y="392" width="4" height="30"/>
-    <rect x="890" y="392" width="4" height="30"/>
-    <rect x="950" y="392" width="4" height="30"/>
-    <rect x="1010" y="392" width="4" height="30"/>
+  <rect x="150" y="372" width="900" height="120" fill="url(#scBuilding)" stroke="#c3ccd8" stroke-width="2"/>
+  <rect x="180" y="398" width="840" height="26" fill="#bfe0f0"/>
+  <g fill="#8fc4dd">
+    <rect x="230" y="398" width="4" height="26"/>
+    <rect x="300" y="398" width="4" height="26"/>
+    <rect x="370" y="398" width="4" height="26"/>
+    <rect x="440" y="398" width="4" height="26"/>
+    <rect x="510" y="398" width="4" height="26"/>
+    <rect x="580" y="398" width="4" height="26"/>
+    <rect x="650" y="398" width="4" height="26"/>
+    <rect x="720" y="398" width="4" height="26"/>
+    <rect x="790" y="398" width="4" height="26"/>
+    <rect x="860" y="398" width="4" height="26"/>
+    <rect x="930" y="398" width="4" height="26"/>
   </g>
 
-  <!-- the iconic white sail / tent roof -->
-  <g fill="url(#scSail)" stroke="#cdd7e2" stroke-width="2">
-    <path d="M300 360 Q360 250 420 360 Z"/>
-    <path d="M420 360 Q480 236 540 360 Z"/>
-    <path d="M540 360 Q600 226 660 360 Z"/>
-    <path d="M660 360 Q720 236 780 360 Z"/>
-    <path d="M780 360 Q840 250 900 360 Z"/>
+  <!-- iconic sail / tent roof -->
+  <g fill="url(#scSail)" stroke="#c3ccd8" stroke-width="2">
+    <path d="M330 372 Q390 262 450 372 Z"/>
+    <path d="M450 372 Q510 248 570 372 Z"/>
+    <path d="M570 372 Q630 238 690 372 Z"/>
+    <path d="M690 372 Q750 248 810 372 Z"/>
+    <path d="M810 372 Q870 262 930 372 Z"/>
   </g>
-  <!-- sail masts -->
   <g stroke="#b7c3d1" stroke-width="3">
-    <line x1="360" y1="360" x2="360" y2="300"/>
-    <line x1="480" y1="360" x2="480" y2="290"/>
-    <line x1="600" y1="360" x2="600" y2="282"/>
-    <line x1="720" y1="360" x2="720" y2="290"/>
-    <line x1="840" y1="360" x2="840" y2="300"/>
+    <line x1="390" y1="372" x2="390" y2="312"/>
+    <line x1="510" y1="372" x2="510" y2="300"/>
+    <line x1="630" y1="372" x2="630" y2="292"/>
+    <line x1="750" y1="372" x2="750" y2="300"/>
+    <line x1="870" y1="372" x2="870" y2="312"/>
   </g>
 
   <!-- bay water -->
-  <rect y="510" width="1200" height="90" fill="url(#scBay)"/>
-  <g fill="#ffffff" opacity="0.18">
-    <rect x="0" y="524" width="1200" height="4"/>
-    <rect x="0" y="548" width="1200" height="4"/>
-    <rect x="0" y="572" width="1200" height="4"/>
+  <rect y="492" width="1200" height="108" fill="url(#scBay)"/>
+  <g stroke="#ffffff" stroke-width="4" opacity="0.22" fill="none" stroke-linecap="round">
+    <path d="M40 512 q30 -9 60 0 t60 0 t60 0"/>
+    <path d="M820 520 q30 -9 60 0 t60 0 t60 0"/>
   </g>
-  <!-- building reflection -->
-  <rect x="120" y="510" width="960" height="30" fill="#e4ebf3" opacity="0.22"/>
+  <!-- boardwalk / promenade the kids stand on -->
+  <rect y="516" width="1200" height="84" fill="#f0c78a"/>
+  <rect y="516" width="1200" height="6" fill="#d9a862"/>
+  <g stroke="#d9a862" stroke-width="3" opacity="0.7">
+    <line x1="150" y1="522" x2="150" y2="600"/>
+    <line x1="360" y1="522" x2="360" y2="600"/>
+    <line x1="560" y1="522" x2="560" y2="600"/>
+    <line x1="760" y1="522" x2="760" y2="600"/>
+    <line x1="960" y1="522" x2="960" y2="600"/>
+  </g>
 
-  <!-- 2025 in the sky -->
-  <text x="880" y="200" text-anchor="middle" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-size="150" font-weight="800" fill="#ffffff" opacity="0.92">2025</text>
-  <text x="880" y="252" text-anchor="middle" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-size="40" font-weight="700" letter-spacing="10" fill="#c0392b">COMIC-CON</text>
+  <!-- === kids in superhero capes cheering === -->
+  <!-- kid 1: red cape, arms up -->
+  <g transform="translate(430,494)">
+    <path d="M-2 -46 C-40 -30 -46 40 -30 74 L2 62 Z" fill="#e94b4b" stroke="#b83232" stroke-width="2"/>
+    <circle cx="0" cy="-58" r="18" fill="#f6c39a" stroke="#c98b5f" stroke-width="2"/>
+    <path d="M-18 -66 Q0 -84 18 -66 L14 -58 Q0 -70 -14 -58 Z" fill="#5a3b28"/>
+    <path d="M-9 -66 h18 v6 h-18 Z" fill="#ffd23f"/>
+    <path d="M-9 -66 l9 8 l9 -8" fill="none" stroke="#ffd23f" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="-14" y="-42" width="28" height="44" rx="8" fill="#3f7fd6"/>
+    <path d="M-14 -34 l28 0" stroke="#2f63aa" stroke-width="3"/>
+    <path d="M-14 -30 l-18 -34" stroke="#f6c39a" stroke-width="11" stroke-linecap="round"/>
+    <path d="M14 -30 l18 -34" stroke="#f6c39a" stroke-width="11" stroke-linecap="round"/>
+    <path d="M-8 2 l-6 28" stroke="#2f4a63" stroke-width="12" stroke-linecap="round"/>
+    <path d="M8 2 l6 28" stroke="#2f4a63" stroke-width="12" stroke-linecap="round"/>
+  </g>
 
-  <!-- a couple of gulls -->
-  <g stroke="#6b4a3a" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6">
-    <path d="M470 150 Q484 138 498 150 Q512 138 526 150"/>
-    <path d="M560 110 Q570 101 580 110 Q590 101 600 110"/>
+  <!-- kid 2: yellow cape, taller, one arm up -->
+  <g transform="translate(600,480)">
+    <path d="M2 -52 C44 -34 50 44 32 82 L-4 68 Z" fill="#ffd23f" stroke="#e0af1e" stroke-width="2"/>
+    <circle cx="0" cy="-64" r="20" fill="#e8b085" stroke="#bd845b" stroke-width="2"/>
+    <path d="M-20 -70 Q0 -92 20 -70 L16 -60 Q0 -76 -16 -60 Z" fill="#3a2a1c"/>
+    <rect x="-16" y="-46" width="32" height="50" rx="9" fill="#d64bab"/>
+    <path d="M0 -40 l-9 12 h18 Z" fill="#ffe27a"/>
+    <path d="M-16 -34 l-20 -40" stroke="#e8b085" stroke-width="12" stroke-linecap="round"/>
+    <path d="M16 -34 l22 -8" stroke="#e8b085" stroke-width="12" stroke-linecap="round"/>
+    <path d="M-9 4 l-6 32" stroke="#3a5a3a" stroke-width="13" stroke-linecap="round"/>
+    <path d="M9 4 l6 32" stroke="#3a5a3a" stroke-width="13" stroke-linecap="round"/>
+  </g>
+
+  <!-- kid 3: blue cape, holding a little flag -->
+  <g transform="translate(770,496)">
+    <path d="M-2 -44 C-38 -28 -44 38 -28 72 L2 60 Z" fill="#3f8fe0" stroke="#2f6fb2" stroke-width="2"/>
+    <circle cx="0" cy="-56" r="17" fill="#f2b98f" stroke="#c98b5f" stroke-width="2"/>
+    <path d="M-17 -62 Q0 -80 17 -62 L13 -54 Q0 -68 -13 -54 Z" fill="#6b4a2f"/>
+    <rect x="-13" y="-40" width="26" height="42" rx="8" fill="#e94b4b"/>
+    <circle cx="0" cy="-24" r="6" fill="#ffd23f"/>
+    <path d="M13 -30 l24 -26" stroke="#f2b98f" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-13 -30 l-16 20" stroke="#f2b98f" stroke-width="10" stroke-linecap="round"/>
+    <!-- flag -->
+    <line x1="37" y1="-56" x2="37" y2="-8" stroke="#7a5230" stroke-width="4"/>
+    <path d="M37 -56 l30 8 l-30 8 Z" fill="#57c785" stroke="#3fa065" stroke-width="2"/>
+    <path d="M-8 2 l-5 26" stroke="#2f4a63" stroke-width="11" stroke-linecap="round"/>
+    <path d="M8 2 l5 26" stroke="#2f4a63" stroke-width="11" stroke-linecap="round"/>
+  </g>
+
+  <!-- POW starburst, lower left -->
+  <g transform="translate(250,470)">
+    <path d="M0 -66 L16 -30 L54 -44 L36 -8 L74 6 L34 16 L52 54 L14 30 L2 70 L-12 30 L-52 50 L-32 12 L-72 2 L-34 -12 L-54 -48 L-16 -30 Z" fill="url(#scBurst)" stroke="#e8452f" stroke-width="5"/>
+    <text x="0" y="14" text-anchor="middle" font-family="'Trebuchet MS','Arial Black',sans-serif" font-size="38" font-weight="900" fill="#e8452f" transform="rotate(-10)">POW!</text>
+  </g>
+
+  <!-- speech-bubble comic banner: SDCC 2025 -->
+  <g transform="translate(870,150)">
+    <ellipse cx="0" cy="0" rx="188" ry="96" fill="#ffffff" stroke="#1c2b3a" stroke-width="6"/>
+    <path d="M-96 78 L-150 150 L-40 92 Z" fill="#ffffff" stroke="#1c2b3a" stroke-width="6"/>
+    <text x="0" y="-8" text-anchor="middle" font-family="'Trebuchet MS','Arial Black',sans-serif" font-size="58" font-weight="900" fill="#e8452f">SDCC</text>
+    <text x="0" y="58" text-anchor="middle" font-family="'Trebuchet MS','Arial Black',sans-serif" font-size="62" font-weight="900" letter-spacing="4" fill="#2b6cb0">2025</text>
+  </g>
+
+  <!-- little sparkle stars -->
+  <g fill="#ffffff">
+    <path d="M540 120 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6 Z" opacity="0.9"/>
+    <path d="M470 250 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4 Z" opacity="0.8"/>
+    <path d="M1040 300 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4 Z" opacity="0.8"/>
   </g>
 </svg>
