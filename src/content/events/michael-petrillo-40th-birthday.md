@@ -40,8 +40,12 @@ the leg that works for you.
 | Date | Daytime | Evening |
 | --- | --- | --- |
 | Sat, Jun 19 | Drive to Zion | Free evening |
-| Sun, Jun 20 | Hike The Narrows | Free evening |
-| Mon, Jun 21 | Tubing | Free evening |
+| Sun, Jun 20 | Hike The Narrows | Stargazing |
+| Mon, Jun 21 | Tubing | [Birthday dinner](#june-21-birthday-dinner) |
+
+#### June 21 Birthday Dinner
+
+TBD — most likely at **Desert Pearl**, with a focus on relaxing by the pool.
 
 ### 🌴 Mandalay Bay · Las Vegas — Jun 22–25
 
