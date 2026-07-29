@@ -24,6 +24,7 @@ npm run build    # static build to ./dist/
 npm run check    # astro build && tsc && wrangler deploy --dry-run  ← run before finishing
 npm run deploy   # build + deploy to Cloudflare Workers (do NOT run unless asked)
 npm run preview  # build, then serve the Worker locally via wrangler
+npm run cf-typegen # regenerate worker-configuration.d.ts from wrangler.json bindings
 ```
 
 There is no test suite and no separate linter. `npm run check` (typecheck +
@@ -54,6 +55,9 @@ src/
     rss.xml.js             # human-readable RSS feed
   styles/global.css        # global styles + CSS custom properties (--accent, --gray-*)
 public/                   # images and fonts; event photos go here
+astro.config.mjs          # Astro config: site URL, MDX + sitemap, Cloudflare adapter
+wrangler.json             # Cloudflare Worker config (name, assets, compat date)
+worker-configuration.d.ts # generated Worker env types (via `npm run cf-typegen`)
 ```
 
 Key flows:
