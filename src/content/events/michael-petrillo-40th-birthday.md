@@ -144,25 +144,32 @@ whoever's in town for this stretch.
 ## Where to Stay
 
 Three legs, three home bases. Book whichever works for your budget — here's what
-we recommend for each stretch.
+we recommend for each stretch. (The dates below are **check-in → check-out**, so
+they run one day past the last activity day on the itinerary above.)
 
-### 🎲 Las Vegas · Jun 15–19
+### 🎲 Las Vegas · check in Jun 15 → out Jun 19 · 4 nights
 
 **MGM Grand** (or **MGM Signature**) — the pick for families. The pool complex has
 the **lazy river** the kids will live on all week, and the Signature towers are
 suite-style and a little quieter if you'd rather be away from the casino floor.
+[Map](https://maps.google.com/?q=MGM+Grand+Las+Vegas) ·
+[Book](https://mgmgrand.mgmresorts.com/)
 
-### 🏜️ Zion · Jun 19–22
+### 🏜️ Zion · check in Jun 19 → out Jun 22 · 3 nights
 
 **Desert Pearl Inn** — right on the Virgin River in Springdale, a short shuttle ride
 from the park entrance and steps from dinner. Any hotel **within the town of Zion
 (Springdale)** works well too; staying in town keeps you close to the trailheads and
 the free shuttle.
+[Map](https://maps.google.com/?q=Desert+Pearl+Inn+Springdale+Utah) ·
+[Book](https://www.desertpearl.com/)
 
-### 🌴 Las Vegas · Jun 22–25
+### 🌴 Las Vegas · check in Jun 22 → out Jun 25 · 3 nights
 
 **Mandalay Bay** — the wind-down leg. Its pool has another **lazy river** plus a wave
 pool and a sandy beach, so the last few days stay easy before the drive home.
+[Map](https://maps.google.com/?q=Mandalay+Bay+Las+Vegas) ·
+[Book](https://mandalaybay.mgmresorts.com/)
 
 ## Highlights
 
@@ -173,6 +180,73 @@ pool and a sandy beach, so the last few days stay easy before the drive home.
   drive home.
 
 Here's to 40! 🎉
+
+## Packing Checklist
+
+Desert days and cool canyon mornings, plus a lot of time in the water. The
+essentials:
+
+- **Sun protection** — sunscreen, hats, sunglasses. The desert sun is no joke.
+- **Water shoes** — a must for The Narrows (you're wading up a river) and handy at
+  the lazy rivers and tubing.
+- **Layers** — canyon mornings and evenings are cool even when afternoons are hot.
+- **Reusable water bottle** — stay ahead of the heat; refill stations are around.
+- **Swimsuits** — you'll want more than one with this many pool days.
+- **A dry bag or ziplocks** — keep phones and keys dry on the river.
+- **Comfortable hiking shoes/socks** — for the trails around Zion.
+- **Costume bits** — see *Themes & Costumes* below. 😎
+
+## What It'll Cost
+
+Rough planning ballparks so each family can decide which legs make sense —
+**confirm current prices when you book**, since rates move a lot by date.
+
+- **Lodging** — the biggest variable. Vegas resort rooms and the Springdale inns
+  each swing widely by weekend vs. weekday; book early for the best rates, and
+  remember Vegas properties often add a **resort fee** on top of the nightly rate.
+- **Zion park entry** — **$35 per vehicle** for a 7-day pass. If you're hitting
+  other national parks this year, the **$80 America the Beautiful** annual pass
+  can pay for itself.
+- **Food** — anywhere from casual to a splurge birthday dinner; budget a little
+  extra for the group nights out.
+- **Activities** — the lazy rivers and hikes are largely included with lodging or
+  park entry; tubing/gear rentals in Springdale are a small add-on.
+- **Getting there** — drive or fly into Las Vegas (LAS), then it's a car for the
+  Vegas ↔ Zion legs.
+
+## Getting Around Zion
+
+A few things worth knowing before the Zion leg:
+
+- **The park shuttle is free — and required in summer.** From spring through fall,
+  private cars can't drive the Zion Canyon Scenic Drive; you park in town or at the
+  visitor center and hop the shuttle to the trailheads. Staying in **Springdale**
+  keeps you right on the town shuttle line.
+- **Start early.** Trailheads and shuttles fill up fast, and mornings are cooler —
+  a big deal for The Narrows.
+- **Check Narrows conditions.** The Narrows is a wade up the Virgin River, and it
+  can close on high flows or water-quality alerts. Check with rangers the day of
+  and have a backup hike in mind.
+
+## Themes & Costumes
+
+Half the fun. The kid movie night has a plan already — **Michael as Alan from
+*The Hangover***, beard, man-satchel, baby carrier and all. Beyond that we're
+kicking around a **group dress-up theme** for one of the Strip nights. Bring ideas
+(and a costume or two), and let's turn a walk down the Strip into a proper bit.
+
+## The Big Wish List
+
+Stretch goals for the trip — the more people who align their dates, the more of
+these we can actually pull off:
+
+- 🔮 **See inside the Sphere** — catch a show at the Vegas Sphere.
+- 🍽️ **Find a standout dinner** — one great restaurant we can all rave about after.
+- 🎭 **A themed group night on the Strip** — everyone in on the bit (see above).
+- 🎶 **A concert or show** for the adults-leaning evenings.
+
+It's a lot to get everyone's vacations to line up — but that's exactly the point.
+Bring a group together and we can do more than any one family would on its own.
 
 ## FAQs
 

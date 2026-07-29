@@ -4,9 +4,14 @@ import { hasDate } from "../lib/events";
 
 interface Props {
 	event: EventEntry;
+	// Small label above the clock. Defaults to the homepage wording.
+	eyebrow?: string;
+	// Show the event title (linked) above the clock. Turn off on a page that
+	// already shows the title (e.g. the event's own page).
+	showTitle?: boolean;
 }
 
-const { event } = Astro.props;
+const { event, eyebrow = "Next up", showTitle = true } = Astro.props;
 const dated = hasDate(event);
 // Countdown targets the start date at 9am local (a friendly, non-midnight time).
 const target = dated ? new Date(event.data.eventDate!) : null;
@@ -18,8 +23,10 @@ const url = `/events/${event.id}/`;
 {
 	dated && (
 		<section class="countdown" aria-label="Countdown to the next event">
-			<p class="cd-eyebrow">Next up</p>
-			<h2 class="cd-title"><a href={url}>{event.data.title}</a></h2>
+			<p class="cd-eyebrow">{eyebrow}</p>
+			{showTitle && (
+				<h2 class="cd-title"><a href={url}>{event.data.title}</a></h2>
+			)}
 			<div class="cd-clock" data-target={iso} role="timer" aria-live="off">
 				<div class="cd-unit"><span class="cd-num" data-days>–</span><span class="cd-lbl">days</span></div>
 				<div class="cd-unit"><span class="cd-num" data-hours>–</span><span class="cd-lbl">hrs</span></div>
@@ -46,6 +53,11 @@ const url = `/events/${event.id}/`;
 		font-size: 0.85rem;
 		font-weight: 700;
 		opacity: 0.85;
+	}
+	/* When there's no title (e.g. on the event's own page), give the eyebrow
+	   some breathing room above the clock. */
+	.countdown:not(:has(.cd-title)) .cd-eyebrow {
+		margin-bottom: 1.3rem;
 	}
 	.cd-title {
 		margin: 0.2rem 0 1.3rem;
