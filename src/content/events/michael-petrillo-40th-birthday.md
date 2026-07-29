@@ -35,18 +35,18 @@ the leg that works for you.
 
 | Date | Daytime | Evening |
 | --- | --- | --- |
-| Tue, Jun 15 | Arrive & settle in | Walk the Strip |
-| Wed, Jun 16 | Lazy river | Fremont Box Fort |
-| Thu, Jun 17 | Lazy river | Kid movie night |
-| Fri, Jun 18 | Lazy river | Dinner out |
+| Tue, Jun 15 | [Arrive & settle in](#arrive-and-settle-in) | [Walk the Strip](#walk-the-strip) |
+| Wed, Jun 16 | [Lazy river](#lazy-river) | [Fremont Box Fort](#fremont-box-fort) |
+| Thu, Jun 17 | [Lazy river](#lazy-river) | [Kid movie night; Michael will be Alan from the hangover](#kid-movie-night) |
+| Fri, Jun 18 | [Lazy river](#lazy-river) | [Dinner out](#dinner-out) |
 
 ### 🏜️ Zion National Park — Jun 19–21
 
 | Date | Daytime | Evening |
 | --- | --- | --- |
-| Sat, Jun 19 | Drive to Zion | Free evening |
-| Sun, Jun 20 | Hike The Narrows | Stargazing |
-| Mon, Jun 21 | Tubing | [Birthday dinner](#june-21-birthday-dinner) |
+| Sat, Jun 19 | [Drive to Zion](#drive-to-zion) | [Free evening](#free-evening) |
+| Sun, Jun 20 | [Hike The Narrows](#hike-the-narrows) | [Stargazing](#stargazing) |
+| Mon, Jun 21 | [Tubing](#tubing) | [Birthday dinner](#june-21-birthday-dinner) |
 
 #### June 21 Birthday Dinner
 
@@ -56,10 +56,90 @@ TBD — most likely at **Desert Pearl**, with a focus on relaxing by the pool.
 
 | Date | Daytime | Evening |
 | --- | --- | --- |
-| Tue, Jun 22 | Drive to Mandalay Bay | Free evening |
-| Wed, Jun 23 | Lazy river | Free evening |
-| Thu, Jun 24 | Lazy river | Free evening |
-| Fri, Jun 25 | Drive home | — |
+| Tue, Jun 22 | [Drive to Mandalay Bay](#drive-to-mandalay-bay) | [Walk the Strip](#walk-the-strip) |
+| Wed, Jun 23 | [Lazy river](#lazy-river) | [Concert or fancy dinner](#concert-or-fancy-dinner) |
+| Thu, Jun 24 | [Lazy river](#lazy-river) | [Concert or dinner meet up](#concert-or-dinner-meet-up) |
+| Fri, Jun 25 | [Drive home](#drive-home) | — |
+
+## Plans in Detail
+
+A little more about each thing on the itinerary. Repeated activities (hello,
+lazy river) all point back to the same note.
+
+### Arrive and settle in
+
+Roll into the MGM Grand, drop the bags, and ease into vacation mode — no agenda
+beyond finding the pool and grabbing a first dinner together.
+
+### Lazy river
+
+The heart of the trip. Both the MGM Grand and Mandalay Bay pool complexes have a
+lazy river the kids will happily float for hours. Bring sunscreen and water
+shoes and plan to lose whole afternoons here.
+
+### Drive to Zion
+
+The scenic leg out of the desert and up into red-rock country — about a
+three-hour drive from Las Vegas to Springdale, right at the park gate.
+
+### Hike The Narrows
+
+The signature Zion hike, wading up the Virgin River between towering canyon
+walls. Water shoes are a must; go early to beat the crowds and the midday heat.
+
+### Tubing
+
+An easy, splashy afternoon floating the river — the low-key counterpart to The
+Narrows and a favorite with the younger crew.
+
+### Drive to Mandalay Bay
+
+Back down to Las Vegas for the wind-down leg, checking in at Mandalay Bay and its
+beach-and-wave-pool complex.
+
+### Drive home
+
+The last leg — pack up, take one more look at the Strip, and point the car home.
+
+### Walk the Strip
+
+An evening stroll down the Las Vegas Strip to take in the lights, the fountains,
+and the sheer spectacle of it all. Easy, free, and good for every age.
+
+### Fremont Box Fort
+
+A night over at the Fremont Street Experience — the light-canopy shows, street
+performers, and that old-school downtown Vegas energy.
+
+### Kid movie night
+
+A cozy in-room movie night for the kids. Michael will be dressing up as Alan from
+*The Hangover* — expect the beard, the man-satchel, and the baby carrier.
+
+### Dinner out
+
+A proper night out at a fun Vegas restaurant — somewhere with a bit of a scene to
+close out the first leg.
+
+### Free evening
+
+Nothing planned on purpose. Rest, wander, or make your own fun — a built-in
+breather in the middle of the trip.
+
+### Stargazing
+
+Zion's dark skies after sunset. Find a clear patch away from the lights, let your
+eyes adjust, and the Milky Way puts on a show.
+
+### Concert or fancy dinner
+
+An adults-leaning evening back in Vegas — either a show or concert, or a nicer
+sit-down dinner, depending on what the group's up for.
+
+### Concert or dinner meet up
+
+Another flexible evening to gather everyone — a concert or a big shared dinner,
+whoever's in town for this stretch.
 
 ## Where to Stay
 
