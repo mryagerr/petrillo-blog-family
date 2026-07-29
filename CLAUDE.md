@@ -7,8 +7,9 @@ Guidance for AI assistants working in this repository.
 A small, warm, mobile-first **family events website** for the Petrillo family —
 upcoming and past gatherings shown as cards, with add-to-calendar buttons, a
 countdown, and a subscribable calendar feed. No accounts, no database: every
-event is a Markdown file. Built with **Astro** (static output) and deployed on
-**Cloudflare Workers**.
+event is a Markdown (`.md` / `.mdx`) file. Built with **Astro** (static output,
+with the MDX and sitemap integrations) and deployed on **Cloudflare Workers**
+via the `@astrojs/cloudflare` adapter.
 
 `README.md` is the human-facing guide and is authoritative for editorial
 workflow; this file focuses on what an AI assistant needs to work safely and
@@ -41,7 +42,9 @@ src/
   content.config.ts       # Zod schema = the full event data model (frontmatter)
   content/events/*.md     # one file per event  ← this is where events live
   lib/events.ts           # sorting, PII gating, and .ics / Google Calendar generation
-  components/*.astro       # cards, countdown, calendar buttons, footer, tags, etc.
+  components/              # EventCard, Countdown, CalendarButtons, EventWhen,
+                          #   EventLocation, RsvpButton, TypeTag, Header/HeaderLink,
+                          #   Footer, FormattedDate, BaseHead (all scoped-CSS .astro)
   layouts/EventPost.astro # single-event page (includes print styles)
   pages/
     index.astro           # homepage: countdown + Upcoming + Past sections
@@ -78,6 +81,11 @@ the open web. Before adding or editing event content, follow the rules in
 - "Who's coming" is a **number only** (`comingCount`) — never a named guest list.
 - No minors' last names, birthdates, schools; no health/financial data; strip
   EXIF from photos before putting them in `public/`.
+- Two photo mechanisms with **different visibility**: an in-repo `gallery` is
+  gated (shown only via `mayRevealGallery()` in gated mode), whereas `albumUrl`
+  is a link to an external shared album (e.g. Google Photos) rendered as a
+  public button near the top of the event — anyone with the site link can open
+  it. Only use `albumUrl` for albums you're happy to share that widely.
 
 `ACCESS_MODE` in `src/consts.ts` (`"public"` | `"gated"`) is the switch that
 gates `fullAddress`, private-home `mapUrl`, and photo galleries. The gating logic
