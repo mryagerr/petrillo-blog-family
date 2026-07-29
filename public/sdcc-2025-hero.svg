@@ -1,107 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="The San Diego Convention Center with its white sail roof along the bay, with 2025 in the sky">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="A pop-art comic-book banner for San Diego Comic-Con 2025, with a starburst, halftone dots, and speech bubbles">
   <defs>
     <linearGradient id="scSky" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#f9d6a3"/>
-      <stop offset="45%" stop-color="#f7b98f"/>
+      <stop offset="55%" stop-color="#f7b98f"/>
       <stop offset="100%" stop-color="#f2a09a"/>
     </linearGradient>
-    <linearGradient id="scBay" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#5b8fb0"/>
-      <stop offset="100%" stop-color="#3f7091"/>
-    </linearGradient>
-    <linearGradient id="scBuilding" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f4f7fb"/>
-      <stop offset="100%" stop-color="#d3dbe6"/>
-    </linearGradient>
-    <linearGradient id="scSail" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#e4ebf3"/>
-    </linearGradient>
+    <radialGradient id="scBurst" cx="50%" cy="46%" r="60%">
+      <stop offset="0%" stop-color="#ffe9a8"/>
+      <stop offset="100%" stop-color="#ffcf4d"/>
+    </radialGradient>
+    <pattern id="scDots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="5" fill="#e07a5f" opacity="0.30"/>
+    </pattern>
   </defs>
 
+  <!-- warm sky -->
   <rect width="1200" height="600" fill="url(#scSky)"/>
+  <!-- halftone dot field -->
+  <rect width="1200" height="600" fill="url(#scDots)"/>
 
-  <!-- setting sun -->
-  <circle cx="250" cy="180" r="80" fill="#ffe6b0" opacity="0.9"/>
-
-  <!-- palm trees, foreground left -->
-  <g stroke="#6b4a3a" stroke-width="10" stroke-linecap="round" fill="none">
-    <path d="M90 560 Q98 430 108 350"/>
-    <path d="M1120 560 Q1112 440 1104 370"/>
-  </g>
-  <g fill="#3f8f5a">
-    <g transform="translate(108,348)">
-      <path d="M0 0 Q-70 -34 -120 -8 Q-64 -18 0 4 Z"/>
-      <path d="M0 0 Q70 -34 120 -8 Q64 -18 0 4 Z"/>
-      <path d="M0 0 Q-40 -68 -78 -84 Q-32 -46 2 -2 Z"/>
-      <path d="M0 0 Q40 -68 78 -84 Q32 -46 -2 -2 Z"/>
-    </g>
-    <g transform="translate(1104,368)">
-      <path d="M0 0 Q-60 -30 -104 -6 Q-56 -16 0 4 Z"/>
-      <path d="M0 0 Q60 -30 104 -6 Q56 -16 0 4 Z"/>
-      <path d="M0 0 Q-34 -60 -68 -74 Q-28 -40 2 -2 Z"/>
-      <path d="M0 0 Q34 -60 68 -74 Q28 -40 -2 -2 Z"/>
-    </g>
+  <!-- radiating action lines behind the burst -->
+  <g stroke="#c0392b" stroke-width="10" opacity="0.16" stroke-linecap="round">
+    <line x1="600" y1="300" x2="120" y2="60"/>
+    <line x1="600" y1="300" x2="600" y2="30"/>
+    <line x1="600" y1="300" x2="1080" y2="60"/>
+    <line x1="600" y1="300" x2="60" y2="300"/>
+    <line x1="600" y1="300" x2="1140" y2="300"/>
+    <line x1="600" y1="300" x2="180" y2="560"/>
+    <line x1="600" y1="300" x2="1020" y2="560"/>
+    <line x1="600" y1="300" x2="380" y2="20"/>
+    <line x1="600" y1="300" x2="820" y2="20"/>
   </g>
 
-  <!-- convention center building -->
-  <rect x="120" y="360" width="960" height="150" fill="url(#scBuilding)"/>
-  <!-- window band -->
-  <g fill="#9fc0d6" opacity="0.85">
-    <rect x="150" y="392" width="900" height="30"/>
-  </g>
-  <g fill="#7ba7c2" opacity="0.6">
-    <rect x="170" y="392" width="4" height="30"/>
-    <rect x="230" y="392" width="4" height="30"/>
-    <rect x="290" y="392" width="4" height="30"/>
-    <rect x="350" y="392" width="4" height="30"/>
-    <rect x="410" y="392" width="4" height="30"/>
-    <rect x="470" y="392" width="4" height="30"/>
-    <rect x="530" y="392" width="4" height="30"/>
-    <rect x="590" y="392" width="4" height="30"/>
-    <rect x="650" y="392" width="4" height="30"/>
-    <rect x="710" y="392" width="4" height="30"/>
-    <rect x="770" y="392" width="4" height="30"/>
-    <rect x="830" y="392" width="4" height="30"/>
-    <rect x="890" y="392" width="4" height="30"/>
-    <rect x="950" y="392" width="4" height="30"/>
-    <rect x="1010" y="392" width="4" height="30"/>
+  <!-- pop-art starburst badge -->
+  <g transform="translate(600,300)">
+    <path fill="url(#scBurst)" stroke="#1f2a44" stroke-width="8" stroke-linejoin="round"
+      d="M0 -250 L44 -150 L150 -190 L120 -78 L245 -70 L150 0 L245 70 L120 78 L150 190 L44 150 L0 250 L-44 150 L-150 190 L-120 78 L-245 70 L-150 0 L-245 -70 L-120 -78 L-150 -190 L-44 -150 Z"/>
   </g>
 
-  <!-- the iconic white sail / tent roof -->
-  <g fill="url(#scSail)" stroke="#cdd7e2" stroke-width="2">
-    <path d="M300 360 Q360 250 420 360 Z"/>
-    <path d="M420 360 Q480 236 540 360 Z"/>
-    <path d="M540 360 Q600 226 660 360 Z"/>
-    <path d="M660 360 Q720 236 780 360 Z"/>
-    <path d="M780 360 Q840 250 900 360 Z"/>
-  </g>
-  <!-- sail masts -->
-  <g stroke="#b7c3d1" stroke-width="3">
-    <line x1="360" y1="360" x2="360" y2="300"/>
-    <line x1="480" y1="360" x2="480" y2="290"/>
-    <line x1="600" y1="360" x2="600" y2="282"/>
-    <line x1="720" y1="360" x2="720" y2="290"/>
-    <line x1="840" y1="360" x2="840" y2="300"/>
+  <!-- lettering inside the burst -->
+  <text x="600" y="212" text-anchor="middle" font-family="'Trebuchet MS','Segoe UI',sans-serif" font-size="46" font-weight="800" letter-spacing="8" fill="#c0392b">SAN DIEGO</text>
+  <text x="600" y="298" text-anchor="middle" font-family="'Trebuchet MS','Segoe UI',sans-serif" font-size="74" font-weight="800" letter-spacing="1" fill="#1f2a44">COMIC-CON</text>
+  <text x="600" y="392" text-anchor="middle" font-family="'Trebuchet MS','Segoe UI',sans-serif" font-size="96" font-weight="800" letter-spacing="6" fill="#c0392b">2025</text>
+
+  <!-- speech bubble: POW! -->
+  <g transform="translate(196,150)">
+    <path fill="#ffffff" stroke="#1f2a44" stroke-width="6" stroke-linejoin="round"
+      d="M-96 -46 Q-110 -46 -110 -28 L-110 30 Q-110 48 -92 48 L-30 48 L-6 84 L-2 48 L92 48 Q110 48 110 30 L110 -28 Q110 -46 92 -46 Z"/>
+    <text x="0" y="18" text-anchor="middle" font-family="'Trebuchet MS','Segoe UI',sans-serif" font-size="58" font-weight="800" fill="#c0392b">POW!</text>
   </g>
 
-  <!-- bay water -->
-  <rect y="510" width="1200" height="90" fill="url(#scBay)"/>
-  <g fill="#ffffff" opacity="0.18">
-    <rect x="0" y="524" width="1200" height="4"/>
-    <rect x="0" y="548" width="1200" height="4"/>
-    <rect x="0" y="572" width="1200" height="4"/>
+  <!-- speech bubble: BAM! -->
+  <g transform="translate(1004,150)">
+    <path fill="#1f2a44" stroke="#1f2a44" stroke-width="6" stroke-linejoin="round"
+      d="M-96 -46 Q-110 -46 -110 -28 L-110 30 Q-110 48 -92 48 L-2 48 L6 84 L30 48 L92 48 Q110 48 110 30 L110 -28 Q110 -46 92 -46 Z"/>
+    <text x="0" y="18" text-anchor="middle" font-family="'Trebuchet MS','Segoe UI',sans-serif" font-size="58" font-weight="800" fill="#ffe9a8">BAM!</text>
   </g>
-  <!-- building reflection -->
-  <rect x="120" y="510" width="960" height="30" fill="#e4ebf3" opacity="0.22"/>
 
-  <!-- 2025 in the sky -->
-  <text x="880" y="200" text-anchor="middle" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-size="150" font-weight="800" fill="#ffffff" opacity="0.92">2025</text>
-  <text x="880" y="252" text-anchor="middle" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-size="40" font-weight="700" letter-spacing="10" fill="#c0392b">COMIC-CON</text>
-
-  <!-- a couple of gulls -->
-  <g stroke="#6b4a3a" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6">
-    <path d="M470 150 Q484 138 498 150 Q512 138 526 150"/>
-    <path d="M560 110 Q570 101 580 110 Q590 101 600 110"/>
+  <!-- little sparks in the lower corners -->
+  <g fill="#ffffff" stroke="#1f2a44" stroke-width="4" stroke-linejoin="round">
+    <path d="M150 500 l14 34 l34 14 l-34 14 l-14 34 l-14 -34 l-34 -14 l34 -14 Z"/>
+    <path d="M1050 500 l12 28 l28 12 l-28 12 l-12 28 l-12 -28 l-28 -12 l28 -12 Z"/>
   </g>
+
+  <!-- comic panel border -->
+  <rect x="14" y="14" width="1172" height="572" fill="none" stroke="#1f2a44" stroke-width="12"/>
 </svg>
