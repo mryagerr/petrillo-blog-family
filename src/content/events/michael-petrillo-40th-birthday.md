@@ -37,7 +37,7 @@ the leg that works for you.
 | --- | --- | --- |
 | Tue, Jun 15 | Arrive & settle in | Walk the Strip |
 | Wed, Jun 16 | Lazy river | Fremont Box Fort |
-| Thu, Jun 17 | Lazy river | Kid movie night |
+| Thu, Jun 17 | Lazy river | Kid movie night; Michael will be Alan from the hangover |
 | Fri, Jun 18 | Lazy river | Dinner out |
 
 ### 🏜️ Zion National Park — Jun 19–21
@@ -56,9 +56,9 @@ TBD — most likely at **Desert Pearl**, with a focus on relaxing by the pool.
 
 | Date | Daytime | Evening |
 | --- | --- | --- |
-| Tue, Jun 22 | Drive to Mandalay Bay | Free evening |
-| Wed, Jun 23 | Lazy river | Free evening |
-| Thu, Jun 24 | Lazy river | Free evening |
+| Tue, Jun 22 | Drive to Mandalay Bay | Walk the Strip |
+| Wed, Jun 23 | Lazy river | Concert or fancy dinner |
+| Thu, Jun 24 | Lazy river | Concert or dinner meet up |
 | Fri, Jun 25 | Drive home | — |
 
 ## Where to Stay
