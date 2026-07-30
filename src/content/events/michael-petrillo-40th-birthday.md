@@ -117,6 +117,8 @@ performers, and that old-school downtown Vegas energy.
 A cozy in-room movie night for the kids. Michael will be dressing up as Alan from
 *The Hangover* — expect the beard, the man-satchel, and the baby carrier.
 
+![Michael dressed as Alan from *The Hangover* — beard, sunglasses, and a baby in a front carrier.](/photos/michael-40th/alan-hangover.png)
+
 ### Dinner out
 
 A proper night out at a fun Vegas restaurant — somewhere with a bit of a scene to
