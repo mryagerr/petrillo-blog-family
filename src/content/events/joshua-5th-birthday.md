@@ -1,34 +1,37 @@
 ---
-title: "Joshua's 5th Birthday Party"
-description: "Joshua is turning 5 — and we're celebrating with a sunny summer party! Think water balloons, splashes, and plenty of backyard fun. Bring the kids, a swimsuit, and a towel."
+title: "Joshua's 5th Birthday"
+description: "Joshua is turning 5 and we're throwing a sunny, end-of-summer water-balloon bash! Expect a splash zone, backyard games, cake, and a whole lot of happy chaos. Come ready to get wet."
 type: "birthday"
-pubDate: "Jul 23 2026"
-eventDate: "Aug 29 2026"
+pubDate: 2026-08-02
+eventDate: 2026-08-29
 startTime: "11:00 AM"
-locationName: "The Petrillo home"
+locationName: "The Petrillo home (San Diego)"
 locationPrivate: true
 host: "The Petrillo family"
 rsvpUrl: "https://evite.me/fyCf5qN9T4"
-rsvpNote: "Tap RSVP for the full address and to let us know you're coming — so we can count heads (and water balloons)."
+rsvpNote: "RSVP through Evite and we'll send you the full address. It also helps us get a head count for food and cake!"
 heroImage: "/joshua-5th-birthday-hero.svg"
 details:
-  - "Kid-friendly summer party — water balloons and a splash zone, so come ready to get wet."
-  - "Bring a swimsuit, a towel, and a change of clothes for the kids."
-  - "Sun protection recommended — hats and sunscreen for the little ones."
+  - "Kid-friendly summer party with water balloons and a splash zone — come ready to get wet!"
+  - "Bring a swimsuit, towel, and a dry change of clothes for the kids."
+  - "Sun protection recommended — hats and sunscreen."
 ---
 
-Joshua is turning **5**! 🎈 We're marking the big day with a **summer water-balloon
-party** — a warm-weather afternoon of splashing, games, and cake.
+## Joshua is turning 5!
+
+We're closing out the summer with a splash. Join the Petrillo family for a sunny backyard birthday party — bring your best water-balloon-dodging moves and a big appetite.
 
 ## What to Expect
 
-- 💦 **Water balloons & a splash zone** — the main event. Come dressed to get soaked.
-- 🎂 **Cake and treats** for everyone.
-- 🎉 **Backyard games** and plenty of room for the kids to run around.
+- **Water balloons & splash zone** — the main event. Things will get wet, gloriously so.
+- **Cake & treats** — because it's a birthday, obviously.
+- **Backyard games** — plenty to do between splash rounds.
 
 ## What to Bring
 
-- A **swimsuit**, a **towel**, and a **dry change of clothes**.
-- **Sunscreen and hats** — it's the tail end of summer.
+- A swimsuit
+- A towel
+- A dry change of clothes for the kids
+- Sunscreen and a hat
 
-Can't wait to celebrate five years of Joshua with you! 🥳
+Can't wait to celebrate Joshua with you — swing on over for a super good time!
